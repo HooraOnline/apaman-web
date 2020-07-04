@@ -1,0 +1,6 @@
+<svg id="ic_AddPhoto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Path_323" data-name="Path 323" d="M0,0H24V24H0Z" fill="none"/>
+  <circle id="Ellipse_41" data-name="Ellipse 41" cx="3" cy="3" r="3" transform="translate(9 9)"/>
+  <path id="Subtraction_48" data-name="Subtraction 48" d="M-1099,12644h-10a2,2,0,0,1-2-2v-12a2,2,0,0,1,2-2h3.169l1.232-1.349a2.017,2.017,0,0,1,1.479-.651h4.239a1.975,1.975,0,0,1,1.47.651l1.241,1.349H-1093a2,2,0,0,1,2,2v8.762a3,3,0,0,0-2-.761,3,3,0,0,0-3,3,3.006,3.006,0,0,0-3,3Zm-2-13a5.006,5.006,0,0,0-5,5,5,5,0,0,0,5,5,5,5,0,0,0,5-5A5,5,0,0,0-1101,12631Z" transform="translate(1113 -12624)"/>
+  <path id="playlist_add-24px" d="M18,14V12a1,1,0,0,0-2,0v2H14a1,1,0,0,0,0,2h2v2a1,1,0,0,0,2,0V16h2a1,1,0,0,0,0-2Z" transform="translate(3 5)"/>
+</svg>

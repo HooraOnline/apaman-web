@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="24" height="24" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="ic_nd1_poll" clip-path="url(#clip-path)">
+    <rect id="Rectangle_246" data-name="Rectangle 246" width="24" height="24" fill="none"/>
+    <path id="round-equalizer-24px" d="M12,20a2.006,2.006,0,0,0,2-2V6a2,2,0,0,0-4,0V18A2.006,2.006,0,0,0,12,20ZM6,20a2.006,2.006,0,0,0,2-2V14a2,2,0,0,0-4,0v4A2.006,2.006,0,0,0,6,20Zm10-9v7a2,2,0,0,0,4,0V11a2,2,0,0,0-4,0Z"/>
+  </g>
+</svg>

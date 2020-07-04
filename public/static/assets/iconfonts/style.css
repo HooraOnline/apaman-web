@@ -1,0 +1,352 @@
+@font-face {
+  font-family: 'Apaman-Icon-Pack';
+  src:  url('./fonts/Apaman-Icon-Pack.eot?xjmjx0');
+  src:  url('./fonts/Apaman-Icon-Pack.eot?xjmjx0#iefix') format('embedded-opentype'),
+    url('./fonts/Apaman-Icon-Pack.ttf?xjmjx0') format('truetype'),
+    url('./fonts/Apaman-Icon-Pack.woff?xjmjx0') format('woff'),
+    url('./fonts/Apaman-Icon-Pack.svg?xjmjx0#Apaman-Icon-Pack') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="ap"], [class*=" ap"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Apaman-Icon-Pack' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.apic_add:before {
+  content: "\e900";
+}
+.apic_addbroadcast:before {
+  content: "\e901";
+}
+.apic_AddCar:before {
+  content: "\e902";
+}
+.apic_addcircle:before {
+  content: "\e903";
+}
+.apic_addcomment:before {
+  content: "\e904";
+}
+.apic_AddNewCard:before {
+  content: "\e905";
+}
+.apic_AddPhoto:before {
+  content: "\e906";
+}
+.apic_addpoll:before {
+  content: "\e907";
+}
+.apic_adduser:before {
+  content: "\e908";
+}
+.apic_alldone:before {
+  content: "\e909";
+}
+.apic_AllPaid:before {
+  content: "\e90a";
+}
+.apic_am_Biliard:before {
+  content: "\e90b";
+}
+.apic_am_Cinema:before {
+  content: "\e90c";
+}
+.apic_am_Pool:before {
+  content: "\e90d";
+}
+.apic_am_RoofGarden:before {
+  content: "\e90e";
+}
+.apic_am_Tennis:before {
+  content: "\e90f";
+}
+.apic_Apaman:before {
+  content: "\e910";
+}
+.apic_attach:before {
+  content: "\e911";
+}
+.apic_back:before {
+  content: "\e912";
+}
+.apic_Badminton:before {
+  content: "\e913";
+}
+.apic_birthday:before {
+  content: "\e914";
+}
+.apic_broadcast:before {
+  content: "\e915";
+}
+.apic_Calendar:before {
+  content: "\e916";
+}
+.apic_calendar-1:before {
+  content: "\e917";
+}
+.apic_Calendar-2:before {
+  content: "\e918";
+}
+.apic_call:before {
+  content: "\e919";
+}
+.apic_camera:before {
+  content: "\e91a";
+}
+.apic_CameraScan:before {
+  content: "\e91b";
+}
+.apic_car:before {
+  content: "\e91c";
+}
+.apic_close:before {
+  content: "\e91d";
+}
+.apic_contacts:before {
+  content: "\e91e";
+}
+.apic_copy:before {
+  content: "\e91f";
+}
+.apic_crop:before {
+  content: "\e920";
+}
+.apic_delete:before {
+  content: "\e921";
+}
+.apic_deleteX:before {
+  content: "\e922";
+}
+.apic_depot:before {
+  content: "\e923";
+}
+.apic_done:before {
+  content: "\e924";
+}
+.apic_done_circle:before {
+  content: "\e925";
+}
+.apic_dropdown:before {
+  content: "\e926";
+}
+.apic_edit:before {
+  content: "\e927";
+}
+.apic_emptyhome:before {
+  content: "\e928";
+}
+.apic_error:before {
+  content: "\e929";
+}
+.apic_expand:before {
+  content: "\e92a";
+}
+.apic_filter:before {
+  content: "\e92b";
+}
+.apic_gallery:before {
+  content: "\e92c";
+}
+.apic_HideCard:before {
+  content: "\e92d";
+}
+.apic_HidePassword:before {
+  content: "\e92e";
+}
+.apic_home:before {
+  content: "\e92f";
+}
+.apic_hourglass:before {
+  content: "\e930";
+}
+.apic_IDcard:before {
+  content: "\e931";
+}
+.apic_important:before {
+  content: "\e932";
+  color: #ea4523;
+}
+.apic_Information:before {
+  content: "\e933";
+}
+.apic_Kind:before {
+  content: "\e934";
+}
+.apic_laundry:before {
+  content: "\e935";
+}
+.apic_left:before {
+  content: "\e936";
+}
+.apic_map:before {
+  content: "\e937";
+}
+.apic_menu:before {
+  content: "\e938";
+}
+.apic_minus:before {
+  content: "\e939";
+}
+.apic_money:before {
+  content: "\e93a";
+}
+.apic_more:before {
+  content: "\e93b";
+}
+.apic_moredetails:before {
+  content: "\e93c";
+}
+.apic_nd_logout:before {
+  content: "\e93d";
+}
+.apic_nd1_call:before {
+  content: "\e93e";
+}
+.apic_nd1_feedback:before {
+  content: "\e93f";
+}
+.apic_nd1_poll:before {
+  content: "\e940";
+}
+.apic_nd1_rules:before {
+  content: "\e941";
+}
+.apic_nd1_users:before {
+  content: "\e942";
+}
+.apic_nd2_bill:before {
+  content: "\e943";
+}
+.apic_nd2_broadcast:before {
+  content: "\e944";
+}
+.apic_nd2_manual:before {
+  content: "\e945";
+}
+.apic_nd3_apartment:before {
+  content: "\e946";
+}
+.apic_nd3_billsetting:before {
+  content: "\e947";
+}
+.apic_nd3_building:before {
+  content: "\e948";
+}
+.apic_nd3_charge:before {
+  content: "\e949";
+}
+.apic_nd3_periodsetting:before {
+  content: "\e94a";
+}
+.apic_nd3_users:before {
+  content: "\e94b";
+}
+.apic_nd4_alerts:before {
+  content: "\e94c";
+}
+.apic_nd4_Amenities:before {
+  content: "\e94d";
+}
+.apic_nd4_calendar:before {
+  content: "\e94e";
+}
+.apic_notif:before {
+  content: "\e94f";
+}
+.apic_notifications:before {
+  content: "\e950";
+}
+.apic_NumberOfUsers:before {
+  content: "\e951";
+}
+.apic_NumberOfUsers-1:before {
+  content: "\e952";
+}
+.apic_parking:before {
+  content: "\e953";
+}
+.apic_password:before {
+  content: "\e954";
+}
+.apic_penalty:before {
+  content: "\e955";
+}
+.apic_penalty_done:before {
+  content: "\e956";
+}
+.apic_Period:before {
+  content: "\e957";
+}
+.apic_period_added:before {
+  content: "\e958";
+}
+.apic_period_notadded:before {
+  content: "\e959";
+}
+.apic_Phone:before {
+  content: "\e95a";
+}
+.apic_PingPong:before {
+  content: "\e95b";
+}
+.apic_plus:before {
+  content: "\e95c";
+}
+.apic_pr_OneMonth:before {
+  content: "\e95d";
+}
+.apic_pr_Order:before {
+  content: "\e95e";
+}
+.apic_pr_Season:before {
+  content: "\e95f";
+}
+.apic_pr_TwoMonth:before {
+  content: "\e960";
+}
+.apic_reply:before {
+  content: "\e961";
+}
+.apic_Ruler:before {
+  content: "\e962";
+}
+.apic_search:before {
+  content: "\e963";
+}
+.apic_send:before {
+  content: "\e964";
+}
+.apic_ShowCard:before {
+  content: "\e965";
+}
+.apic_shower:before {
+  content: "\e966";
+}
+.apic_ShowPassword:before {
+  content: "\e967";
+}
+.apic_TextSms:before {
+  content: "\e968";
+}
+.apic_timer:before {
+  content: "\e969";
+}
+.apic_typeof:before {
+  content: "\e96a";
+}
+.apic-addrule:before {
+  content: "\e96b";
+}

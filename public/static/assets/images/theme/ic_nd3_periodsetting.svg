@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="24" height="24" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="ic_nd3_periodsetting" clip-path="url(#clip-path)">
+    <path id="Path_377" data-name="Path 377" d="M0,0H24V24H0Z" fill="none"/>
+    <path id="Path_378" data-name="Path 378" d="M17.65,6.35a7.95,7.95,0,0,0-6.48-2.31,8,8,0,1,0,8.04,11.4,1,1,0,0,0-.9-1.44.973.973,0,0,0-.88.53A6,6,0,1,1,12,6a5.915,5.915,0,0,1,4.22,1.78L14.71,9.29a1,1,0,0,0,.7,1.71H19a1,1,0,0,0,1-1V6.41a1,1,0,0,0-1.71-.71l-.64.65Z"/>
+  </g>
+</svg>

@@ -1,0 +1,5 @@
+<svg id="ic_AddCar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Path_18514" data-name="Path 18514" d="M24,0H0V24H24Z" fill="none"/>
+  <path id="Subtraction_67" data-name="Subtraction 67" d="M14.5,16H9a3,3,0,0,0-.4-1.5h5.182a1.012,1.012,0,0,0,.95-.68L16,10H4.238a3,3,0,0,0-4.03-.4l-.1-.276A2.1,2.1,0,0,1,0,8.658V1.5a1.5,1.5,0,0,1,3,0V2H15V1.5a1.5,1.5,0,0,1,3,0v7.16a2.105,2.105,0,0,1-.11.66l-1.97,5.67A1.5,1.5,0,0,1,14.5,16Zm0-11A1.5,1.5,0,1,0,16,6.5,1.5,1.5,0,0,0,14.5,5ZM3.5,5A1.5,1.5,0,1,0,5,6.5,1.5,1.5,0,0,0,3.5,5Z" transform="translate(21.002 20.998) rotate(180)"/>
+  <path id="playlist_add-24px" d="M16,14V11a1,1,0,0,1,2,0v3h3a1,1,0,0,1,0,2H18v3a1,1,0,0,1-2,0V16H13a1,1,0,0,1,0-2Z" transform="translate(2 -10)"/>
+</svg>

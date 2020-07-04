@@ -1,0 +1,5 @@
+<svg id="ic-addrule" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Path_18439" data-name="Path 18439" d="M0,0H24V24H0Z" fill="none"/>
+  <path id="Path_18440" data-name="Path 18440" d="M2,21H14a1,1,0,0,1,0,2H2a1,1,0,0,1,0-2ZM5.24,8.07,8.07,5.24,21.8,17.97a2,2,0,0,1-2.83,2.83Zm8.49-5.66,2.83,2.83a2,2,0,0,1,0,2.83L15.14,9.49,9.49,3.83,10.9,2.42a2,2,0,0,1,2.83-.01ZM3.83,9.48l5.66,5.66L8.08,16.55a2,2,0,0,1-2.83,0L2.42,13.72a2,2,0,0,1,0-2.83Z" transform="translate(-1 1)"/>
+  <path id="Path_18441" data-name="Path 18441" d="M6,10V8A1,1,0,0,0,4,8v2H2a1,1,0,0,0,0,2H4v2a1,1,0,0,0,2,0V12H8a1,1,0,0,0,0-2Z" transform="translate(15 -7)"/>
+</svg>

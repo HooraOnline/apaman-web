@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="24" height="24" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="ic_camera" clip-path="url(#clip-path)">
+    <path id="Path_323" data-name="Path 323" d="M0,0H24V24H0Z" fill="none"/>
+    <circle id="Ellipse_41" data-name="Ellipse 41" cx="3" cy="3" r="3" transform="translate(9 9)"/>
+    <path id="Path_324" data-name="Path 324" d="M20,4H16.83L15.59,2.65A1.991,1.991,0,0,0,14.12,2H9.88a2.029,2.029,0,0,0-1.48.65L7.17,4H4A2.006,2.006,0,0,0,2,6V18a2.006,2.006,0,0,0,2,2H20a2.006,2.006,0,0,0,2-2V6A2.006,2.006,0,0,0,20,4ZM12,17a5,5,0,1,1,5-5A5,5,0,0,1,12,17Z"/>
+  </g>
+</svg>

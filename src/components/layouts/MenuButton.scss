@@ -1,0 +1,27 @@
+// components/NavButton.scss
+
+.MenuButton{
+  display: flex;
+  flex-direction: row;
+  //justify-content: space-around;
+  align-items: center;
+  padding: 7px;
+  cursor: pointer;
+
+}
+.Icon {
+  font-size: 20px;
+  padding-right:10px;
+  padding-left:10px;
+}
+
+.Label {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.active {
+  color: #FA4141;
+ }
+
+
+

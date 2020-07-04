@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="24" height="24" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="ic_nd_logout" clip-path="url(#clip-path)">
+    <g id="_24px_11_" data-name="24px (11)" transform="translate(24) rotate(90)">
+      <path id="Path_431" data-name="Path 431" d="M0,0H24V24H0Z" fill="none"/>
+      <path id="Path_432" data-name="Path 432" d="M19,4H5A2,2,0,0,0,3,6V18a2.006,2.006,0,0,0,2,2H8a1,1,0,0,0,0-2H5V8H19V18H16a1,1,0,0,0,0,2h3a2.006,2.006,0,0,0,2-2V6A2,2,0,0,0,19,4Zm-7.35,6.35L8.86,13.14a.5.5,0,0,0,.35.86H11v5a1,1,0,0,0,2,0V14h1.79a.5.5,0,0,0,.35-.85l-2.79-2.79a.492.492,0,0,0-.7-.01Z"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg id="ic_Badminton" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectangle_8363" data-name="Rectangle 8363" width="24" height="24" fill="none"/>
+  <g id="badminton" transform="translate(3 3.047)">
+    <path id="Path_18538" data-name="Path 18538" d="M0,0H1.055V1.758H0Z" transform="translate(2.202 10.548) rotate(-45)"/>
+    <path id="Path_18539" data-name="Path 18539" d="M109.221.8h-3a.527.527,0,0,0-.468.284l-4.51,8.667,1.338,1.338L109.749,2.8V1.333A.526.526,0,0,0,109.221.8Z" transform="translate(-97.705 -0.799)"/>
+    <path id="Path_18540" data-name="Path 18540" d="M1.451,322.752l-.373.373a3.691,3.691,0,0,0,5.22,5.22l.367-.378Z" transform="translate(0.001 -311.481)"/>
+    <path id="Path_18541" data-name="Path 18541" d="M0,0H1.055V1.758H0Z" transform="translate(4.178 12.531) rotate(-45)"/>
+    <path id="Path_18542" data-name="Path 18542" d="M169.5,85.8h-1.9l-6.975,8.05,1.317,1.317,8.085-6.982V86.327A.527.527,0,0,0,169.5,85.8Z" transform="translate(-155.009 -82.828)"/>
+    <path id="Path_18543" data-name="Path 18543" d="M0,0H1.055V1.758H0Z" transform="translate(6.161 14.508) rotate(-45)"/>
+    <path id="Path_18544" data-name="Path 18544" d="M229.223,169.914h-1.5l-8.306,7.16,1.339,1.339,8.709-4.516a.529.529,0,0,0,.286-.47v-2.984A.529.529,0,0,0,229.223,169.914Z" transform="translate(-211.753 -163.998)"/>
+  </g>
+</svg>

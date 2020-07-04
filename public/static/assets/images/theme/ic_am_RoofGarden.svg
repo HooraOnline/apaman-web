@@ -1,0 +1,13 @@
+<svg id="ic_am_RoofGarden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Bounding_Box">
+    <rect id="Rectangle_8361" data-name="Rectangle 8361" width="24" height="24" fill="none"/>
+    <rect id="Rectangle_8362" data-name="Rectangle 8362" width="24" height="24" fill="none"/>
+  </g>
+  <g id="Master">
+    <g id="Group_11048" data-name="Group 11048">
+      <path id="Path_18535" data-name="Path 18535" d="M20.41,9a.5.5,0,0,0,.29-.91L13.15,2.8a2,2,0,0,0-2.29,0L3.3,8.09A.5.5,0,0,0,3.59,9H11V21a1,1,0,0,0,2,0V9Z"/>
+      <path id="Path_18536" data-name="Path 18536" d="M8,16H4.9l-.57-3.02a1,1,0,1,0-1.97.37L3,16.74V21a1,1,0,0,0,1,1h.01a.994.994,0,0,0,1-.99L5.02,18H7v3a1,1,0,0,0,2,0V17A1,1,0,0,0,8,16Z"/>
+      <path id="Path_18537" data-name="Path 18537" d="M20.84,12.18a1.013,1.013,0,0,0-1.17.8L19.1,16H16a1,1,0,0,0-1,1v4a1,1,0,0,0,2,0V18h1.98L19,21.01A.994.994,0,0,0,20,22h0a1,1,0,0,0,1-1V16.74l.64-3.39A1.008,1.008,0,0,0,20.84,12.18Z"/>
+    </g>
+  </g>
+</svg>

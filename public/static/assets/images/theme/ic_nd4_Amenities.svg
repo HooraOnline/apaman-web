@@ -1,0 +1,9 @@
+<svg id="ic_nd4_Amenities" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Path_387" data-name="Path 387" d="M0,0H24V24H0Z" fill="none"/>
+  <g id="Flat">
+    <g id="Group_11052" data-name="Group 11052">
+      <path id="Path_18550" data-name="Path 18550" d="M19,19H3a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/>
+      <path id="Path_18551" data-name="Path 18551" d="M20,3H9V5.4l1.81,1.45a.493.493,0,0,1,.19.39V11.5a.5.5,0,0,1-.5.5h-4a.5.5,0,0,1-.5-.5V7.24a.493.493,0,0,1,.19-.39L8,5.4V3H6A2.006,2.006,0,0,0,4,5v8a4,4,0,0,0,4,4h6a4,4,0,0,0,4-4V10h2a2.006,2.006,0,0,0,2-2V5A2.006,2.006,0,0,0,20,3Zm0,5H18V5h2Z"/>
+    </g>
+  </g>
+</svg>

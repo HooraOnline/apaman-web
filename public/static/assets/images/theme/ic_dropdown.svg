@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="24" height="24" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="ic_dropdown" clip-path="url(#clip-path)">
+    <rect id="Rectangle_93" data-name="Rectangle 93" width="24" height="24" fill="none"/>
+    <path id="round-keyboard_arrow_left-24px" d="M6.293,1.712l-3.88,3.88,3.88,3.88a1,1,0,1,1-1.41,1.41L.293,6.292a1,1,0,0,1,0-1.41L4.883.292a1,1,0,0,1,1.41,0,1.017,1.017,0,0,1,0,1.42Z" transform="translate(6.706 15.706) rotate(-90)"/>
+  </g>
+</svg>

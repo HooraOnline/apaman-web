@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="24" height="24" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="ic_AllPaid" clip-path="url(#clip-path)">
+    <path id="Subtraction_8" data-name="Subtraction 8" d="M15631,11023a10,10,0,1,1,10-10A10.012,10.012,0,0,1,15631,11023Zm-3.86-10.479a1.136,1.136,0,0,0-.807,1.938l2.395,2.383a1.134,1.134,0,0,0,1.605,0l5.9-5.9a1.134,1.134,0,0,0,0-1.605,1.139,1.139,0,0,0-1.609,0l-5.1,5.1-1.582-1.581A1.125,1.125,0,0,0,15627.138,11012.521Z" transform="translate(-15619 -11001)"/>
+    <path id="Path_391" data-name="Path 391" d="M0,0H24V24H0Z" fill="none"/>
+  </g>
+</svg>

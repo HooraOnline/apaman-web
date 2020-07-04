@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="24" height="24" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="ic_nd2_broadcast" clip-path="url(#clip-path)">
+    <rect id="Rectangle_247" data-name="Rectangle 247" width="24" height="24" fill="none"/>
+    <path id="round-volume_up-24px_1_" data-name="round-volume_up-24px (1)" d="M3,10v4a1,1,0,0,0,1,1H7l3.29,3.29A1,1,0,0,0,12,17.58V6.41a1,1,0,0,0-1.71-.71L7,9H4A1,1,0,0,0,3,10Zm13.5,2A4.5,4.5,0,0,0,14,7.97v8.05A4.474,4.474,0,0,0,16.5,12ZM14,4.45v.2a.93.93,0,0,0,.6.85,7,7,0,0,1,0,13,.915.915,0,0,0-.6.85v.2a.9.9,0,0,0,1.21.85,8.988,8.988,0,0,0,0-16.8A.9.9,0,0,0,14,4.45Z" transform="translate(0 0.461)"/>
+  </g>
+</svg>

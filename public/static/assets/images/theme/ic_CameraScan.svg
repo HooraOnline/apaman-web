@@ -1,0 +1,7 @@
+<svg id="ic_CameraScan" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Path_18516" data-name="Path 18516" d="M0,0H24V24H0Z" fill="none"/>
+  <g id="Group_11039" data-name="Group 11039" transform="translate(-108 -152)">
+    <path id="Path_18519" data-name="Path 18519" d="M1,0H17a1,1,0,0,1,0,2H1A1,1,0,0,1,1,0Z" transform="translate(129 165) rotate(180)"/>
+    <path id="Path_18522" data-name="Path 18522" d="M3,5V8A1,1,0,0,0,5,8V6A1,1,0,0,1,6,5H8A1,1,0,0,0,8,3H5A2.006,2.006,0,0,0,3,5ZM4,15a1,1,0,0,0-1,1v3a2.006,2.006,0,0,0,2,2H8a1,1,0,0,0,0-2H6a1,1,0,0,1-1-1V16A1,1,0,0,0,4,15Zm15,3a1,1,0,0,1-1,1H16a1,1,0,0,0,0,2h3a2.006,2.006,0,0,0,2-2V16a1,1,0,0,0-2,0ZM19,3H16a1,1,0,0,0,0,2h2a1,1,0,0,1,1,1V8a1,1,0,0,0,2,0V5A2.006,2.006,0,0,0,19,3Z" transform="translate(108 152)"/>
+  </g>
+</svg>

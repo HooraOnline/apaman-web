@@ -1,0 +1,11 @@
+<svg id="ic_PingPong" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectangle_8364" data-name="Rectangle 8364" width="24" height="24" fill="none"/>
+  <g id="icon" transform="translate(2.525 1)">
+    <g id="Group_11050" data-name="Group 11050" transform="translate(-0.526 1)">
+      <circle id="Ellipse_2255" data-name="Ellipse 2255" cx="2" cy="2" r="2" fill="#030104"/>
+    </g>
+    <g id="Group_11051" data-name="Group 11051" transform="translate(-0.525 1)">
+      <path id="Path_18545" data-name="Path 18545" d="M4.142,9.552l7.718,7.714a7.874,7.874,0,0,1-2.794-.538c-.359-.068-1.8-.3-2.355.249C5.449,18.238,4.3,19.96,3.665,20.591s-1.526.368-2.372-.478S.2,18.354.816,17.742,3.169,15.96,4.432,14.7c.578-.579.278-2.178.232-2.4A7.878,7.878,0,0,1,4.142,9.552ZM18.18,3.233C14.427-.519,9.495.794,6.424,3.864a7.8,7.8,0,0,0-2.146,4l9.271,9.268a7.813,7.813,0,0,0,4-2.143C20.619,11.913,21.935,6.986,18.18,3.233Z" transform="translate(-0.475 -0.939)" fill="#030104"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="24" height="24" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="ic_gallery" clip-path="url(#clip-path)">
+    <path id="Path_325" data-name="Path 325" d="M0,0H24V24H0Z" fill="none"/>
+    <path id="Path_326" data-name="Path 326" d="M22,16V4a2.006,2.006,0,0,0-2-2H8A2.006,2.006,0,0,0,6,4V16a2.006,2.006,0,0,0,2,2H20A2.006,2.006,0,0,0,22,16ZM11.4,12.53l1.63,2.18,2.58-3.22a.5.5,0,0,1,.78,0l2.96,3.7a.5.5,0,0,1-.39.81H9a.5.5,0,0,1-.4-.8l2-2.67a.508.508,0,0,1,.8,0ZM2,7V20a2.006,2.006,0,0,0,2,2H17a1,1,0,0,0,0-2H5a1,1,0,0,1-1-1V7A1,1,0,0,0,2,7Z"/>
+  </g>
+</svg>

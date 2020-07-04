@@ -1,0 +1,38 @@
+// NavBar.scss
+
+@import "src/components/layouts/theme/theme";
+
+.NavBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 50px;
+  height: 60px;
+  width: 100%;
+  background: $primary;
+  font-family: $core-font;
+  font-size: 22px;
+  color: $on-primary-light;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .active {
+    border: 1px solid white;
+    width: 200px;
+    background-color: #ea4523;
+    color: white;
+    border-radius:50px
+  }
+  @media screen and (max-width:425px){
+    .active {
+      border: 1px solid white;
+      width: 100px;
+      background-color: #ea4523 ;
+      color: white;
+      border-radius:50px
+    }
+  }
+}

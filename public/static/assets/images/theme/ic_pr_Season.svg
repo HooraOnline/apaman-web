@@ -1,0 +1,11 @@
+<svg id="ic_pr_Season" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Bounding_Box">
+    <rect id="Rectangle_8208" data-name="Rectangle 8208" width="24" height="24" fill="none"/>
+    <rect id="Rectangle_8209" data-name="Rectangle 8209" width="24" height="24" fill="none"/>
+  </g>
+  <g id="Master" transform="translate(19.959 4.036) rotate(90)">
+    <g id="Group_10660" data-name="Group 10660" transform="translate(0 0)">
+      <path id="Path_18367" data-name="Path 18367" d="M17.911,8.05a7,7,0,0,1,.02,9.88A16.182,16.182,0,0,0,10.571,10a15.952,15.952,0,0,1,5.39,9.32,7,7,0,0,1-7.95-1.37C5.021,14.96,4.181,6.81,4,4.57a.489.489,0,0,1,.53-.53C6.771,4.22,14.921,5.06,17.911,8.05Z" transform="translate(-4 -4.038)"/>
+    </g>
+  </g>
+</svg>
