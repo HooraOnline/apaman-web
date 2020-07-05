@@ -25,43 +25,46 @@ export default class ImageCacheProgress extends PureComponent{
     async downloadImage(imageName){
         await getImageBase64Query(imageName)
             .then(result => {
+
                 this.setState({loadingImage: false, imageData: result});
             })
             .catch(e =>{
                 this.setState({loadingImage: false});
             } );
     }
-    setImag=(imageData)=>{
-        if(imageData){
+    setImag=()=>{
+        if(this.state.imageData){
+
             return;
         }
         let source=this.props.source;
         if(source && source.uri){
             this.downloadImage(source.uri);
         }
-
-
-
     }
 
     componentDidMount() {
-
+        //this.setImag();
     }
 
     render(){
         if(!this.props.source){
             return (<Image style={this.props.style} source={this.props.defaltImage || images.default_ProPic}/>)
         }
+        this.setImag();
 
-        this.setImag(this.state.imageData);
         return (
-            <ImageLoader
+            <img
+                {...this.props}
+                src={this.state.imageData}
+            />
+           /* <ImageLoader
                 {...this.props}
                 src={this.state.imageData}
                 loading={() => <CircularProgress/>}
                 error={() => <Image style={this.props.style} source={this.props.defaltImage || images.default_ProPic}/>}
 
-            />
+            />*/
         )
     }
 

@@ -205,12 +205,9 @@ export default class PayAdmin extends PureComponent {
     }
 
     async componentDidMount() {
-
         waitForData(()=>{
-
             this.getUsers();
         });
-
     }
 
     async getUsers(mobile = null, name = null, unitNumber = null) {

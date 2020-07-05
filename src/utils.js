@@ -14,20 +14,6 @@ import accounting from 'accounting';
 import { bake_cookie, read_cookie, delete_cookie } from 'sfcookies';
 
 
-export  function formatMoney(number, decPlaces, decSep, thouSep) {
-
-    decPlaces = isNaN(decPlaces = Math.abs(decPlaces)) ? 2 : decPlaces,
-        decSep = typeof decSep === "undefined" ? "." : decSep;
-    thouSep = typeof thouSep === "undefined" ? "," : thouSep;
-    var sign = number < 0 ? "-" : "";
-    var i = String(parseInt(number = Math.abs(Number(number) || 0).toFixed(decPlaces)));
-    var j = (j = i.length) > 3 ? j % 3 : 0;
-
-    return sign +
-        (j ? i.substr(0, j) + thouSep : "") +
-        i.substr(j).replace(/(\decSep{3})(?=\decSep)/g, "$1" + thouSep) +
-        (decPlaces ? decSep + Math.abs(number - i).toFixed(decPlaces).slice(2) : "");
-}
 
 export async function fetchFactory(url, options) {
     console.log("*********fetchFactory Start*******");
@@ -139,7 +125,7 @@ async function fetchWithTimeout(url, errMessage, options = {method: 'GET'}, time
     ]);
 }
 
-function unicodeToChar(text) {
+export function unicodeToChar(text) {
     if (text) {
         return text.replace(/\\u[\dA-F]{4}/gi, function (match) {
             return String.fromCharCode(parseInt(match.replace(/\\u/g, ''), 16));

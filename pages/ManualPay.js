@@ -239,19 +239,8 @@ export default class ManualPay extends PureComponent {
                                     <Text style={{fontSize: 12, color: drawerItem}}>مبلغ</Text>
                                     <View style={{flex:1, flexDirection: 'row', marginStart: 48, marginEnd: 24}}>
                                         {this.item?(
-                                            <Text>{formatMoney(this.state.currentPrice, '', 0, ',')}</Text>
+                                            <Text>{accounting.formatMoney(this.state.currentPrice, '', 0, ',')}</Text>
                                         ):(
-                                           /* <FloatingLabelTextInput
-                                                placeholder="0"
-                                                onChangeText={text => {
-                                                    this.setState({
-                                                        currentPrice2: text,
-
-                                                    });
-                                                }}
-                                                maxLength={3}
-                                                value={this.state.currentPrice2}
-                                            />*/
                                             <FloatingLabelTextInput
                                                 placeholder="0"
                                                 onChangeText={text => {
@@ -281,13 +270,13 @@ export default class ManualPay extends PureComponent {
                                                 keyboardType="number-pad"
                                                 returnKeyType="done"
                                                 unit={userStore.CurrencyID}
-                                                value={formatMoney(this.state.currentPrice)}
+                                                value={accounting.formatMoney(this.state.currentPrice, '', 0, ',')}
                                             />
                                         )
 
                                         }
 
-                                      {/*  <Text
+                                        {/*  <Text
                                             style={{
                                                 fontFamily: Platform.OS === 'ios' ? 'IRANYekanFaNum' : 'IRANYekanRegular(FaNum)',
                                                 fontSize: 12,
@@ -855,8 +844,10 @@ export default class ManualPay extends PureComponent {
                                                 image= {this.state.imageReceipt} //{'1587814870896.jpg'}
                                                 //noImage={images.bg_addphoto}
                                                 hideDeleteBtn={false}
+                                                autoUpload={true}
                                                 onUplodedFile={(fileName)=>{
-                                                    this.setState({imageReceipt: fileName});
+
+                                                    this.setState({imageName:fileName,imageReceipt: fileName});
                                                 }}
                                                 onRemoveImage={(fileName)=>{
                                                     this.setState({imageReceipt: null});

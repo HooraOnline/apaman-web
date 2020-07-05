@@ -163,7 +163,7 @@ export default class PersianCalendarPickerPopup extends PureComponent {
                                     {showToday && (
                                         <TouchableOpacity
                                             style={{alignSelf: 'flex-end', paddingHorizontal: 13, marginTop:10}}
-                                            onPress={() => this.onDateSelect(jMoment.utc())}
+                                            onPress={() => this.selectToday()}
                                         >
                                             <View style={{
                                                 flexDirection: 'row',
@@ -885,6 +885,12 @@ font-size: 12px;
         date=parseTimeToGregorian(date.year+'/'+date.month+'/'+date.day);
         date=mapNumbersToEnglish(date);
         this.props.onValueChange(date);
+        this.setState({dialogVisible: false});
+    }
+
+    selectToday() {
+
+        this.props.onValueChange(new Date());
         this.setState({dialogVisible: false});
     }
 }

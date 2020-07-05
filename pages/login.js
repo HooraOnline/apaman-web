@@ -460,6 +460,7 @@ export default class LoginPage extends PureComponent {
                                     maxLength={11}
                                     autoFocus={this.state.focusIndex==1}
                                     keyboardType="number-pad"
+                                    type={'number'}
                                     returnKeyType="next"
                                     onSubmitEditing={() => loginInput[1].focus()}
                                     style={{textAlign: global.isRtl ? 'right' : 'left',}}

@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
-import {Animated, Platform, UIManager,FastImage} from '../react-native';
-import {fab} from '../constants/colors';
+import {Animated, Platform, UIManager, FastImage, TouchableOpacity} from '../react-native';
+import {fab, primaryDark} from '../constants/colors';
 import images from "../../public/static/assets/images";
 
 //import FastImage from 'react-native-fast-image';
@@ -8,6 +8,8 @@ import images from "../../public/static/assets/images";
 //import {createImageProgress} from 'react-native-image-progress';
 import {getFileDownloadURL} from '../utils';
 import {persistStore} from '../stores';
+import ImageCacheProgress from "./ImageCacheProgress";
+import Progress from "../react-native/Progress";
 
 //const ImageCacheProgress = createImageProgress(FastImage);
 
@@ -22,8 +24,36 @@ export default class ImageComponent extends PureComponent {
     }
     render() {
         const {image, iHeight = 40, iWidth = 40, resizeMode = 'cover'} = this.props;
-        return (<Text>کامپوننت پیاده سازی شود</Text>
-            /*<ImageCacheProgress
+        return (
+                <ImageCacheProgress
+                    style={{
+                        height: iHeight,
+                        width: iWidth,
+                        borderRadius: 10,
+                        overflow: 'hidden',
+                    }}
+                    resizeMode={resizeMode}
+                    imageStyle={{
+                        height:  56,
+                        width: 56 ,
+                        borderRadius: 20,
+                    }}
+                    default_ProPic={images.ic_error}
+                    source={{ uri: image,}}
+                    indicator={Progress.Pie}
+                    indicatorProps={{
+                        size: 30,
+                        borderWidth: 2,
+                        color: '#ddd',
+                        unfilledColor: primaryDark,
+                    }}
+
+                    onLoad={() => {
+                        this.setState({imageExists: true});
+                    }}
+                />
+
+           /* <ImageCacheProgress
                 style={{
                     height: iHeight,
                     width: iWidth,

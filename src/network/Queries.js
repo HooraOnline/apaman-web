@@ -1,4 +1,4 @@
-import {fetchFactory, getFileDownloadURL, logger} from '../utils';
+import {fetchFactory, getFileDownloadURL, logger,unicodeToChar} from '../utils';
 import {accountsStore, globalState, persistStore, userStore} from '../stores';
 import fetch from "isomorphic-unfetch";
 
@@ -1401,6 +1401,15 @@ export async function getBiuldingOrUserBankAccount(userId) {
     } catch (e) {
         throw e;
     }
+}
+function arrayBufferToBase64( buffer ) {
+    var binary = '';
+    var bytes = new Uint8Array( buffer );
+    var len = bytes.byteLength;
+    for (var i = 0; i < len; i++) {
+        binary += String.fromCharCode( bytes[ i ] );
+    }
+    return window.btoa( binary );
 }
 export async function getImageBase64Query(fileName) {
     const headersSetting={

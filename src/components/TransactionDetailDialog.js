@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {FlatList, Image, Platform, ScrollView, Text, TouchableOpacity, View} from '../react-native';
+import {FlatList, IconApp, Image, Platform, ScrollView, Text, TouchableOpacity, View} from '../react-native';
 import {
     CardMasked,
     CardRow,
@@ -10,7 +10,7 @@ import {
     ShowPrice,
     TransactionCard,
 } from './index';
-import {bgSuccessLight, bgWhite, overlayColor, subTextItem, success} from '../constants/colors';
+import {bgSuccessLight, bgWhite, fab, overlayColor, subTextItem, success} from '../constants/colors';
 import images from "../../public/static/assets/images";
 
 export default function TransactionDetailDialog({visible, item, onDismiss}) {
@@ -43,10 +43,10 @@ export default function TransactionDetailDialog({visible, item, onDismiss}) {
                                 <TouchableOpacity
                                     style={{flex: 0.1, paddingStart: 16, paddingTop: 16}}
                                     onPress={onDismiss}>
-                                    <Image
-                                        source={images.ic_close}
+                                    <IconApp
+                                        source={'apic_close'}
                                         style={{
-                                            //tintColor: subTextItem,
+                                            tintColor: subTextItem,
                                             width: 24,
                                             height: 24
                                         }}
@@ -75,12 +75,12 @@ export default function TransactionDetailDialog({visible, item, onDismiss}) {
                                     paddingEnd: 8,
                                     paddingVertical: 4,
                                 }}>
-                                <Image
-                                    source={images.ic_circleDone}
+                                <IconApp
+                                    source={'apic_done_circle'}
                                     style={{
                                         height: 20,
                                         width: 20,
-                                        //tintColor: success,
+                                        tintColor: success,
                                         marginEnd: 4,
                                     }}
                                 />
@@ -176,8 +176,6 @@ export default function TransactionDetailDialog({visible, item, onDismiss}) {
                                                 }
                                             />
                                         )}
-
-
                                         <CardRow
                                             title="شناسه پرداخت"
                                             data={item.Numbers}
@@ -198,7 +196,6 @@ export default function TransactionDetailDialog({visible, item, onDismiss}) {
                                             />
                                         )}
                                     </View>
-
                                 )}
 
                                 {!!item.ChequeName && (
@@ -227,7 +224,7 @@ export default function TransactionDetailDialog({visible, item, onDismiss}) {
                                                             marginStart: 8,
                                                             height: 21,
                                                             width: 21,
-                                                            // tintColor: fab,
+                                                            tintColor: fab,
                                                         }}
                                                     />
                                                 </View>

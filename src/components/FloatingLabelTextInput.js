@@ -193,7 +193,7 @@ export default class FloatingLabelTextInput extends PureComponent {
         const {style,autoFocus, textInputStyle, placeholder,keyboardType, tintColor, highlightColor, underlineSize, underlineEnabled, floatingLabelAniDuration, floatingLabelEnable, type,maxLength=1000000,numberOfLines,onChangeText,adornment} = this.props;
         let props=this.props;
         let pKeyboardType=type || 'string';
-        if(keyboardType=='number-pad') pKeyboardType='number'
+       // if(keyboardType=='number-pad') pKeyboardType='number'
         return (
             <View style={{flexDirection:'row', justifyContent: 'flex-end',flex:1}}>
                 {

@@ -237,6 +237,7 @@ class PayAnnounce extends PureComponent {
     }
 
     render() {
+
         const toolbarStyle = {
             start: {
                 onPress: this.onBackPress.bind(this),
