@@ -144,7 +144,7 @@ class Content extends PureComponent {
                             borderRadius: 10,
                             elevation: 4,
                             position:'relative',
-                            maxWidgh:600,
+                            maxWidth:600,
                             width:'95%',
                         }]}>
 

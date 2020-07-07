@@ -75,8 +75,9 @@ export default class LoginPage extends PureComponent {
             languageIndex: LNGList[0].index,
             focusIndex:1,
         };
-        this.passInput =
-            React.createRef();
+        this.passInput =  React.createRef();
+
+
     }
 
     animatedSplash() {
@@ -300,7 +301,7 @@ export default class LoginPage extends PureComponent {
                                 flex: 1,
                                 justifyContent: 'center',
                                 alignItems: 'center',
-                                //backgroundColor: 'rgba(255,255,255,.8)',
+
                             }}>
                             <Animated.View
                                 style={{
@@ -309,17 +310,18 @@ export default class LoginPage extends PureComponent {
                                     backgroundColor: 'rgba(255,255,255,.8)',
                                     marginTop: 0,
                                     justifyContent: 'center',
-                                    position: 'relative'
+                                    position: 'relative',
+                                    maxWidth:500,
                                 }}>
                                 <Animated.View
                                     style={[styles.logoContainer, {
                                         marginTop: 0,// this.animatedLogoPosition,
                                         position: 'absolute',
-                                        top: -60,
+                                        top: -45,
                                     }]}>
                                     <Animated.Image source={images.logo} style={{
-                                        width: 120,//this.animatedLogoSize,
-                                        height: 120,// this.animatedLogoSize,
+                                        width: 90,//this.animatedLogoSize,
+                                        height: 90,// this.animatedLogoSize,
                                     }}/>
 
                                 </Animated.View>
@@ -339,7 +341,7 @@ export default class LoginPage extends PureComponent {
                                         marginTop: 100,
                                     }}>
 
-                                    <LinearProgress style={{width: this.state.progressWidth, maxWidth: 400}}
+                                    <LinearProgress style={{width: this.state.progressWidth, maxWidth: 500}}
                                                     color="secondary"></LinearProgress>
 
                                     <Text
@@ -387,6 +389,7 @@ export default class LoginPage extends PureComponent {
                         flex: 1,
                         justifyContent: 'center',
                         alignItems: 'center',
+
                     }}>
                     <Animated.View
                         style={{
@@ -395,6 +398,7 @@ export default class LoginPage extends PureComponent {
                             backgroundColor: 'rgba(255,255,255,.8)',
                             marginTop: 0,
                             position: 'relative',
+                            maxWidth:500,
 
                         }}>
                         <Animated.View
@@ -411,6 +415,7 @@ export default class LoginPage extends PureComponent {
                         <Animated.View
                             style={{
                                 flex: 1,
+
                                 opacity: 1,// this.animatedLoginOpacity,
                             }}>
                             <View style={{
@@ -418,7 +423,7 @@ export default class LoginPage extends PureComponent {
                                 margin: 24,
                             }}>
                                 <Select
-                                    style={{marginTop: 30, width: 100, alignSelf: 'center'}}
+                                    style={{marginTop: 15, width: 100, alignSelf: 'center'}}
                                     labelId="demo-simple-select-helper-label"
                                     id="demo-simple-select-helper"
                                     value={this.state.languageIndex}
@@ -431,8 +436,8 @@ export default class LoginPage extends PureComponent {
                                 </Select>
 
                                 <Text style={{
-                                    marginTop: 30,
-                                    fontSize: 20,
+                                    marginTop: 16,
+                                    fontSize: 16,
                                     fontWeight:800,
                                     fontFamily: Platform.OS === 'ios' ? 'IRANYekan-ExtraBold' : 'IRANYekanExtraBold',
                                     textAlign: 'center',
@@ -440,8 +445,8 @@ export default class LoginPage extends PureComponent {
                                     {translate('welcome_to_app')}
                                 </Text>
                                 <Text style={{
-                                    marginTop: 6,
-                                    marginBottom: 35,
+                                    marginTop: 0,
+                                    marginBottom: 16,
                                     fontSize: 14,
                                     fontFamily: Platform.OS === 'ios' ? 'IRANYekanFaNum-Light' : 'IRANYekanLight(FaNum)',
                                     textAlign: 'center',
@@ -450,6 +455,7 @@ export default class LoginPage extends PureComponent {
                                         translate('enter_your_phone_number')
                                     }
                                 </Text>
+
                                 <FloatingLabelTextInput
                                     refInput={input => loginInput[0] = input}
                                     floatingLabelEnable={false}
@@ -474,7 +480,7 @@ export default class LoginPage extends PureComponent {
                                         color: textItemBlack,
                                         fontSize: 14,
                                         paddingStart: 4,
-                                        paddingTop: 1,
+                                        paddingTop: 10,
                                         paddingBottom: 3,
                                         textAlign: global.isRtl ? 'right' : 'left',
 
@@ -489,7 +495,10 @@ export default class LoginPage extends PureComponent {
                                             userName: inputNumberValidation(text, this.state.userName, /[\d]+$/),
                                             userNameValidation: true,
                                         }, () => {
-                                            this.state.userName.length === 11 ? loginInput[1].focus() : null;
+
+                                            if(this.state.userName.length === 11){
+                                                this.passInput.current.focus();
+                                            }
                                         });
 
                                     }}
@@ -506,6 +515,7 @@ export default class LoginPage extends PureComponent {
                                 >
                                     <FloatingLabelTextInput
                                         refInput={input => loginInput[1] = input}
+                                        ref={this.passInput}
                                         type={this.state.showPassword ? 'text' : 'password'}
                                         floatingLabelEnable={false}
                                         floatingOffsetX={0}
@@ -567,7 +577,7 @@ export default class LoginPage extends PureComponent {
                             </View>
 
                             {this.state.loading &&
-                            <LinearProgress style={{marginTop: 25, width: this.state.progressWidth - 10, maxWidth: 400}}
+                            <LinearProgress style={{marginTop: 25, width: this.state.progressWidth - 10, maxWidth: 500}}
                                             color="secondary"></LinearProgress>
                             }
                             <TouchableOpacity
@@ -580,7 +590,7 @@ export default class LoginPage extends PureComponent {
                                     borderRadius: 10,
                                     marginHorizontal: 24,
                                     marginTop: 10,
-                                    marginBottom: 24,
+                                    marginBottom: 16,
                                     backgroundColor: this.checkValidation() ? primaryDark : 'transparent',
                                 }}
                             >

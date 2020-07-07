@@ -224,7 +224,6 @@ export default function TransactionDetailDialog({visible, item, onDismiss}) {
                                                             marginStart: 8,
                                                             height: 21,
                                                             width: 21,
-                                                            tintColor: fab,
                                                         }}
                                                     />
                                                 </View>

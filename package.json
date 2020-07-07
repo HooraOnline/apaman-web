@@ -4,14 +4,24 @@
   "private": true,
   "description": "Apaman reactJs, nextJs, I18N, MaterialUi init on Monta.ir",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node index.js",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3000",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && rm -rf .next/ && npm install && npm run dev",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
-    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
+
+
+
+    "test": "NODE_ENV=test jest",
+    "test:watch": "NODE_ENV=test jest --watch",
+    "test:coverage": "NODE_ENV=test jest --coverage",
+    "test:cypress": "NODE_ENV=test cypress open",
+    "lint": "eslint .",
+    "lint:watch": "esw . --watch --cache",
+    "lint:watchAll": "esw . --watch",
+    "circleci:run": "circleci local execute --job $JOB"
   },
   "keywords": [
     "next",

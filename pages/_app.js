@@ -67,7 +67,34 @@ class MyApp extends App {
 
     return { pageProps }
   }
+  viewportHandler=(event)=> {
+    alert(22)
+    // NOTE: This doesn't actually work at time of writing
+    if (event.target.scale > 3) {
+      document.body.classList.remove("hide-text");
+    } else {
+      document.body.classList.add("hide-text");
+    }
+  }
   async componentDidMount() {
+    if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+      let viewportmeta = document.querySelector('meta[name="viewport"]');
+      if(viewportmeta===null){
+        viewportmeta = document.createElement("meta");
+        viewportmeta.setAttribute("name","viewport");
+        document.head.appendChild(viewportmeta);
+
+        viewportmeta = document.querySelector('meta[name="viewport"]');
+
+        //window.visualViewport.addEventListener("resize", viewportHandler);
+
+      }
+      viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no");
+      console.log(document.querySelector('meta[name="viewport"]'));
+
+
+
+    }
     await fetchStore();
     let comment = document.createComment(``);
     document.insertBefore(comment, document.documentElement);

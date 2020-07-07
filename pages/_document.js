@@ -10,35 +10,25 @@ class MyDocument extends Document {
           <meta charSet="UTF-8"/>
           <link rel="icon" href="../static/logo.png"/>
           <meta name="description" content={ 'مدیریت هوشمند ساختمان'}/>
-          <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
           <link rel="stylesheet" href="../static/assets/global.css"/>
           <link rel="stylesheet" href="../static/assets/iconfont.css"/>
-          <link rel="shortcut icon" href="/static/icon.png"/>
-          <link rel="apple-touch-icon" href="/static/icon.png"/>
+          <link rel="shortcut icon" href="/static/iconIos.png"/>
           <link rel="apple-touch-icon" href="/static/apple-touch-icon.png"/>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <link rel="manifest" href="/static/manifest.webmanifest"/>
           <meta name="theme-color" content="#ff6600"/>
-          <meta name="apple-mobile-web-app-title" content="Hacker News"/>
+          <meta name="apple-mobile-web-app-title" content="Apaman"/>
           <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
           <meta name="apple-mobile-web-app-capable" content="yes"/>
           <meta name="mobile-web-app-capable" content="yes"/>
 
-
-
-          <meta
+         {/* <meta
               name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
-          <meta name="theme-color" content="#000000" />
-        {/*  <link rel="shortcut icon" href={require("../assets/logo.png")} />
-          <link
-              rel="apple-touch-icon"
-              sizes="76x76"
-              href={require("../assets/logo.png")}
           />*/}
+            <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 
-
+            <meta name="theme-color" content="#000000" />
           <link
               rel="stylesheet"
               type="text/css"
@@ -48,14 +38,14 @@ class MyDocument extends Document {
               href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
               rel="stylesheet"
           />
-
-
         </Head>
         <body>
         <div id="page-transition"></div>
         <Main />
         <NextScript />
         </body>
+
+
         </html>
     );
   }

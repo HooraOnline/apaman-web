@@ -882,6 +882,7 @@ font-size: 12px;
     }
 
     onDateSelect(date) {
+        debugger
         date=parseTimeToGregorian(date.year+'/'+date.month+'/'+date.day);
         date=mapNumbersToEnglish(date);
         this.props.onValueChange(date);
@@ -889,7 +890,6 @@ font-size: 12px;
     }
 
     selectToday() {
-
         this.props.onValueChange(new Date());
         this.setState({dialogVisible: false});
     }

@@ -136,7 +136,10 @@ export default class FloatingLabelTextInput extends PureComponent {
             isFieldActive: false,
             isFocused: false,
         };
+        this.textInput = React.createRef();
+
     }
+
 
     componentDidMount() {
         this.fontSize = this.props.textInputStyle && this.props.textInputStyle.fontSize ? this.props.textInputStyle.fontSize : 14;
@@ -151,7 +154,11 @@ export default class FloatingLabelTextInput extends PureComponent {
             this._handleAnimate(!!this.props.value);
         }
     }
+    focus=()=> {
+        this.textInput.current.focus();
+        this.textInput.current.firstChild.focus()
 
+    }
     _handleAnimate(state) {
         Animated.timing(this.position, {
             toValue: state ? 1 : 0,
@@ -210,6 +217,7 @@ export default class FloatingLabelTextInput extends PureComponent {
                         <View style={{flex:1,flexDirection:'row'}}>
                             <Input
                                 {...props}
+                                ref={this.textInput}
                                 endAdornment={
                                     <InputAdornment position="end"  >
                                         {this.props.Adornment}
@@ -245,7 +253,6 @@ export default class FloatingLabelTextInput extends PureComponent {
                                 }}
 
 
-                                ref='txtInput'
                                 {...this.props}
                                 placeholder={floatingLabelEnable ? '' : placeholder}
                                 underlineColorAndroid='transparent'
@@ -309,7 +316,7 @@ const Styles = StyleSheet.create({
         // flex: 1,
 
     },
-    textInput: {},
+
     labelStyles: {
         position: 'absolute',
         left: 3,

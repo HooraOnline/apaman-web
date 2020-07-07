@@ -127,16 +127,20 @@ export default class UnitsTable extends Component {
 
     render() {
         let elements = this.props.items.map((item, index) => {
-            return <UnitTableElement
-                key={index}
-                id={index}
-                item={item}
-                price={this.props.prices[index]}
-                color={this.props.redOnEmpty && this.props.prices[index].Price === '' ? 'red' : placeholderTextColor}
-                writePermission={this.props.writePermission}
+            return (
+                <View style={{margin:16}}>
+                    <UnitTableElement
+                        key={index}
+                        id={index}
+                        item={item}
+                        price={this.props.prices[index]}
+                        color={this.props.redOnEmpty && this.props.prices[index].Price === '' ? 'red' : placeholderTextColor}
+                        writePermission={this.props.writePermission}
 
-                onValueChanged={o => this.props.onPriceEdit(o)}
-            />;
+                        onValueChanged={o => this.props.onPriceEdit(o)}
+                    />
+                </View>
+            )
         });
 
 

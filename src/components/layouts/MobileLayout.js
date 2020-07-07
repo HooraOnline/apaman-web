@@ -161,7 +161,7 @@ const MobileLayout = observer( props => {
                <div id={"header"} style={{position:'fixed',top:0,zIndex:4,width:global.width}}>
                     {props.header}
                 </div>
-                <View id={'body'} style={{height:'100%',padding:0 , width:'100%',marginBottom:props.footer?65:0}}>
+                <View id={'body'} style={{height:'100%',padding:0 , width:'100%',marginBottom:props.footer?0:0}}>
                         {props.children}
                 </View>
                <div style={{position:'fixed',zIndex:4,bottom:0,width:global.width,}}>

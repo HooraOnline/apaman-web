@@ -64,7 +64,7 @@ export default function SectionList(props) {
     return (props.ListEmptyComponent || null)
   }
   return (
-      <div style={{overflowY:'scroll',position:'relative'}} >
+      <div style={{overflowY:'hide',position:'relative'}} >
         {
           props.sections.map((section, sectionIndex) => {
             return (
