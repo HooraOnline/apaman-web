@@ -15,7 +15,7 @@ import {getAllUnits, setDefaultCharge} from '../src/network/Queries';
 import UnitsTable from '../src/components/UnitsTable';
 import {bgScreen, overlayColor, primaryDark, success} from '../src/constants/colors';
 import {permissionId} from '../src/constants/values';
-import {mapNumbersToEnglish, navigation, showMassage, waitForData} from '../src/utils';
+import {mapNumbersToEnglish, navigation, Platform, showMassage, waitForData} from '../src/utils';
 import MobileLayout from "../src/components/layouts/MobileLayout";
 
 import accounting from 'accounting';
@@ -215,7 +215,7 @@ class BatchPriceSet extends Component {
                     />
                 )}
                 onClose={onClose}
-                fromTop={60}
+                fromTop={50}
             >
                 <TouchableOpacity
                     style={{
@@ -313,9 +313,28 @@ export default class IppCharge extends Component {
         };
 
         return (
-            <MobileLayout style={{padding:0}} title={`فرم شارژ ثابت`}>
+            <MobileLayout style={{padding:0}} title={`فرم شارژ ثابت`}
+            header={ <Toolbar customStyle={toolbarStyle}/>}
+            footer={<View>
+                  {this.allUnits.length > 0 && this.state.permission &&
+                  <TouchableOpacity
+                      onPress={() => {
+                          this.submitPrices();
+                      }}
+                      style={{
+                          backgroundColor: (!this.state.pristine) ? primaryDark : '#D5CBCB',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                      }}
+                      disabled={this.state.pristine}
+                  >
+                      <Text style={{fontSize: 16, color: 'white',padding:Platform()=='ios'?16:12}}>ثبت</Text>
+                  </TouchableOpacity>
+                  }
+            </View>}
+            >
                 <View style={{flex:  1, backgroundColor: bgScreen}}>
-                    <Toolbar customStyle={toolbarStyle}/>
+
 
                     <AndroidBackButton
                         onPress={() => {
@@ -396,28 +415,7 @@ export default class IppCharge extends Component {
                     >
                     </UnitsTable>
 
-                    {this.allUnits.length > 0 && this.state.permission &&
-                    <TouchableOpacity
-                        onPress={() => {
-                            this.submitPrices();
-                        }}
-                        disabled={this.state.pristine}
-                    >
-                        <View style={{flexDirection: 'row'}}>
-                            <View
-                                style={{
-                                    flex: 4,
-                                    height: 48,
-                                    backgroundColor: (!this.state.pristine) ? primaryDark : '#D5CBCB',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                <Text style={{fontSize: 16, color: 'white'}}>ثبت</Text>
-                            </View>
-                        </View>
-                    </TouchableOpacity>
-                    }
+
 
                     {this.state.showBatchPriceSet &&
                     <BatchPriceSet
@@ -513,6 +511,7 @@ export default class IppCharge extends Component {
         await setDefaultCharge(body)
             .then(() => {
                 //this.onBackPressed();
+                this.setState({pristine:true})
                 showMassage('اطلاعات با موفقیت ذخیره شد.','','success')
             })
             .catch(e => {globalState.showToastCard()})

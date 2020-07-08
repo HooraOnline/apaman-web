@@ -5,10 +5,10 @@ const next = require('next')
 const mobxReact = require('mobx-react')
 mobxReact.useStaticRendering(true)
 
-const i18n_forLanguage = require('./i18n')
+//const i18n_forLanguage = require('./i18n')
 
-const port = process.env.PORT || 3300
-const app = next({dev: process.env.NODE_ENV !== 'production'})
+const port = process.env.PORT || 3000
+const app = next({dev: process.env.NODE_ENV !== 'production'});
 const handle = app.getRequestHandler();
 
 (async () => {
@@ -17,7 +17,7 @@ const handle = app.getRequestHandler();
 
     //server.use(nextI18NextMiddleware(i18n_forLanguage))
 
-    server.get('*', (req, res) => handle(req, res))
+    server.get('*', (req, res) => handle(req, res));
 
     await server.listen(port)
     console.log(`> Ready on http://localhost:${port}`) // eslint-disable-line no-console

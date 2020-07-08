@@ -282,7 +282,6 @@ export default class PayAdmin extends PureComponent {
         return (
             <MobileLayout style={{padding:0,}} title={`ساکنین`}
               header={<Toolbar ref='refToolbar' customStyle={toolbarStyle}/>}
-
             >
                 <View style={{flex: 1, backgroundColor: bgScreen,marginTop:10,}}>
                     <AndroidBackButton
@@ -328,7 +327,7 @@ export default class PayAdmin extends PureComponent {
                             this.setState({showSearchType: false});
                         }}
                         onClose={() => this.setState({showSearchType: false})}
-                        fromTop={60}
+                        fromTop={50}
                     />
 
                     <SnakePopup
@@ -340,10 +339,10 @@ export default class PayAdmin extends PureComponent {
                             this.setState({showSortType: false});
                         }}
                         onClose={() => this.setState({showSortType: false})}
-                        fromTop={60}
+                        fromTop={50}
                     />
 
-                    <View style={{flex: 1, backgroundColor: '#f5f1f1', marginEnd: 16}}>
+                    <View style={{flex: 1, backgroundColor: '#f5f1f1', marginHorizontal: 10}}>
                         <FlatList
                             keyboardDismissMode={'on-drag'}
                             onScroll={() => Keyboard.dismiss()}
@@ -353,7 +352,7 @@ export default class PayAdmin extends PureComponent {
                             renderItem={({item, index}) => (
                                 <UserCard
                                     index={index}
-                                    style={{margin:10}}
+                                    style={{marginVertical:10}}
                                     item={item}
                                     onPress={item => {
                                         navigation.navigate('/PayAnnounce', {
@@ -371,7 +370,7 @@ export default class PayAdmin extends PureComponent {
                     </View>
 
                     <SnakePopup
-                        fromTop={60}
+                        fromTop={50}
                         visible={this.state.showCallList}
                         toolbarTitle="شماره های تماس"
                         items={this.state.calListSelected}

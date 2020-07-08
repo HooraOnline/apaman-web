@@ -5,7 +5,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import MenuButton from "../MenuButton";
 import EditIcon from '@material-ui/icons/Edit';
-import {deviceWide, fetchStore, getFileDownloadURL, getWidth, navigation} from '../../utils';
+import {deviceWide, fetchStore, getFileDownloadURL, getWidth, navigation, showMassage} from '../../utils';
 import {globalState, persistStore, userStore} from '../../stores';
 import Router from "next/router";
 import {
@@ -35,7 +35,7 @@ const navigatorLinks = {
     FacilityDetails: 'FacilityDetails',
     Costs: 'Costs',
     Suggestion: 'Suggestion',
-    NoticBoard: 'NoticBoard',
+    //NoticBoard: 'NoticBoard',
     Units: 'Units',
     UnitsCreate: 'UnitsCreate',
     AddCost: 'AddCost',
@@ -555,10 +555,12 @@ const MenuBar=observer(props=> {
                         renderItem={(child, section, index) =>{
                             if(!child.destination)
                                 return null;
+                            if(!navigatorLinks[child.destination]){}
+                               showMassage(`The form  ${child.destination} is in Database forms but was not set in DrawerPanel.js file`,'','error')
                             return (
                                 <MenuButton
                                     key={child.destination}
-                                    path={navigatorLinks[child.destination]}
+                                    path={navigatorLinks[child.destination]?navigatorLinks[child.destination]:'404'}
                                     label={child.persianName}
                                     icon={child.icon}
                                     onPress={formId=> persistStore.curentFormId=child.formID}

@@ -155,7 +155,7 @@ const MobileLayout = observer( props => {
                     width:'100%',
                     backgroundColor:bgScreen,
                     flexDirection:'column',
-                    margin:isWide?3:0,paddingTop:props.header?63:0,
+                    margin:isWide?3:0,paddingTop:props.header?55:0,
                     position:'relative',
             }}>
                <div id={"header"} style={{position:'fixed',top:0,zIndex:4,width:global.width}}>
@@ -164,7 +164,12 @@ const MobileLayout = observer( props => {
                 <View id={'body'} style={{height:'100%',padding:0 , width:'100%',marginBottom:props.footer?0:0}}>
                         {props.children}
                 </View>
-               <div style={{position:'fixed',zIndex:4,bottom:0,width:global.width,}}>
+               <div style={{
+                   position:'fixed',
+                   zIndex:4,
+                   bottom:0,
+                   width:global.width,
+               }}>
                     {props.footer}
                 </div>
                 <ToastCard

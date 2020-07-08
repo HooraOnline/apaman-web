@@ -138,7 +138,7 @@ export default class Toolbar extends PureComponent {
                        //flex:1,
                         flexDirection: 'row',
                         backgroundColor:this.props.color || primary,
-                        height: 60,
+                        height: 50,
                         elevation: 4,
                         alignItems:'center',
                         justifyContent:'center'
@@ -218,7 +218,7 @@ export default class Toolbar extends PureComponent {
                         style={{
                             width: '100%',
                             backgroundColor:this.props.color || primary,
-                            height: 65,
+                            height: 55,
                             elevation: 4,
                         }}>
                         {/* <StatusBar backgroundColor={globalState.statusBarColor} barStyle="light-content"/>*/}
@@ -418,8 +418,8 @@ const styles = StyleSheet.create({
     },
     actionIcon: {
         padding: 16,
-        paddingTop: 24,
-        paddingBottom: 16,
+        //paddingTop: 24,
+        //paddingBottom: 16,
         //height: '100%',
     },
     searchContainer: {

@@ -278,7 +278,7 @@ export default class Announcement extends PureComponent {
                               </View>
                           }
             >
-                <View style={{flex: 1, backgroundColor: bgScreen}}>
+                <View style={{flex: 1, backgroundColor: bgScreen,paddingHorizontal:16}}>
 
                     <AndroidBackButton
                         onPress={() => {

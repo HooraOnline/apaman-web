@@ -61,7 +61,7 @@ const MainContent = observer(props => {
         return null
     }
     return (
-        <div style={{display:'flex',flexDirection:'column', alignItems:'center', width:'100%',height:'100%',maxHeight:3*tileHeight, }}>
+        <div style={{display:'flex',flexDirection:'column', alignItems:'center', width:'100%',height:'100%',maxHeight:3*tileHeight, cursor:'pointer' }}>
             {props.forms[0] &&(
                 <div onClick={()=>navigate(props.forms[0])} style={{position:'relative', width:'100%',height:'34%',margin:1,maxHeight:tileHeight,maxWidth:2*tileWidth}} >
                     <img src={images[props.forms[0].formName]} style={{objectFit: 'cover',width:'100%',height:'100%',maxWidth:2*tileWidth,maxHeight:tileHeight}} />

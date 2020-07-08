@@ -10,10 +10,12 @@ import Footer from "components_creative/Footer/Footer.js";
 import GridContainer from "components_creative/Grid/GridContainer.js";
 import GridItem from "components_creative/Grid/GridItem.js";
 import Parallax from "components_creative/Parallax/Parallax.js";
-import { i18n, withTranslation} from '../i18n'
+//import { i18n, withTranslation} from '../i18n'
 import styles from "assets/jss/nextjs-material-kit/pages/components.js";
 import AboutApamanSection from "./home/AboutApamanSection";
 const useStyles = makeStyles(styles);
+
+
 
 function Home(props) {
   const classes = useStyles();
@@ -57,5 +59,6 @@ function Home(props) {
     </div>
   );
 }
+export default  Home
 
-export default withTranslation('translation')(Home)
+//export default withTranslation('translation')(Home)

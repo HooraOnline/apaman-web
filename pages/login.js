@@ -25,7 +25,7 @@ import {
     inputNumberValidation,
     logger,
     mapNumbersToEnglish,
-    saveCookie
+    saveCookie, showMassage
 } from '../src/utils';
 import {FloatingLabelTextInput, LoadingPopUp} from '../src/components';
 //import DeviceInfo from 'react-native-device-info';
@@ -341,7 +341,7 @@ export default class LoginPage extends PureComponent {
                                         marginTop: 100,
                                     }}>
 
-                                    <LinearProgress style={{width: this.state.progressWidth, maxWidth: 450}}
+                                    <LinearProgress style={{width: this.state.progressWidth, maxWidth: 400}}
                                                     color="secondary"></LinearProgress>
 
                                     <Text
@@ -456,64 +456,66 @@ export default class LoginPage extends PureComponent {
                                     }
                                 </Text>
 
-                                <FloatingLabelTextInput
-                                    refInput={input => loginInput[0] = input}
-                                    floatingLabelEnable={false}
-                                    floatingOffsetX={0}
-                                    floatingLabelFont={{color: textItem}}
-                                    editable={true}
-                                    multiline={false}
-                                    maxLength={11}
-                                    autoFocus={this.state.focusIndex==1}
-                                    keyboardType="number-pad"
-                                    type={'number'}
-                                    returnKeyType="next"
-                                    onSubmitEditing={() => loginInput[1].focus()}
-                                    style={{textAlign: global.isRtl ? 'right' : 'left',}}
-                                    numberOfLines={1}
-                                    tintColor={
-                                        this.state.userNameValidation ? textItem : lightRed
-                                    }
-                                    textInputStyle={{
-                                        fontWeight: 'normal',
-                                        fontFamily: Platform.OS === 'ios' ? 'IRANYekan-ExtraBold' : 'IRANYekanExtraBold',
-                                        color: textItemBlack,
-                                        fontSize: 14,
-                                        paddingStart: 4,
-                                        paddingTop: 10,
-                                        paddingBottom: 3,
-                                        textAlign: global.isRtl ? 'right' : 'left',
+                                <View dir={"ltr"}  style={{}}>
+                                    <FloatingLabelTextInput
+                                        floatingLabelEnable={false}
+                                        floatingOffsetX={0}
+                                        floatingLabelFont={{color: textItem}}
+                                        editable={true}
+                                        multiline={false}
+                                        maxLength={11}
+                                        //autoFocus={true}
+                                        keyboardType="number-pad"
+                                        type={'number'}
+                                        returnKeyType="next"
+                                        style={{}}
+                                        numberOfLines={1}
+                                        tintColor={
+                                            this.state.userNameValidation ? textItem : lightRed
+                                        }
+                                        textInputStyle={{
+                                            fontWeight: 'normal',
+                                            fontFamily: Platform.OS === 'ios' ? 'IRANYekan-ExtraBold' : 'IRANYekanExtraBold',
+                                            color: textItemBlack,
+                                            fontSize: 14,
+                                            paddingStart: 4,
+                                            paddingTop: 10,
+                                            paddingBottom: 3,
+                                            textAlign: 'left',
 
-                                    }}
-                                    underlineSize={1}
-                                    placeholder={translate('example')}
+                                        }}
+                                        underlineSize={1}
+                                        placeholder={translate('example')}
 
-                                    // style={{flex: 1}}
-                                    onChangeText={text => {
-                                        this.checkValidation();
-                                        this.setState({
-                                            userName: inputNumberValidation(text, this.state.userName, /[\d]+$/),
-                                            userNameValidation: true,
-                                        }, () => {
+                                        // style={{flex: 1}}
+                                        onChangeText={text => {
+                                            this.checkValidation();
+                                            this.setState({
+                                                userName: inputNumberValidation(text, this.state.userName, /[\d]+$/),
+                                                userNameValidation: true,
+                                            }, () => {
 
-                                            if(this.state.userName.length === 11){
-                                                this.passInput.current.focus();
-                                            }
-                                        });
+                                                if(this.state.userName.length === 11){
+                                                    this.passInput.current.focus();
+                                                }
+                                            });
 
-                                    }}
-                                    highlightColor={primaryDark}
-                                    value={this.state.userName}
-                                />
+                                        }}
+                                        highlightColor={primaryDark}
+                                        value={this.state.userName}
+                                    />
+                                </View>
 
                                 <View
+                                    dir={'ltr'}
                                     style={{
-
                                         flexDirection: 'row',
                                         marginTop: 24,
                                     }}
                                 >
+
                                     <FloatingLabelTextInput
+
                                         refInput={input => loginInput[1] = input}
                                         ref={this.passInput}
                                         type={this.state.showPassword ? 'text' : 'password'}
@@ -539,7 +541,7 @@ export default class LoginPage extends PureComponent {
                                             paddingStart: 4,
                                             paddingTop: 1,
                                             paddingBottom: 3,
-                                            textAlign: global.isRtl ? 'right' : 'left',
+                                            textAlign: 'left',
                                         }}
                                         underlineSize={1}
                                         placeholder={
@@ -560,7 +562,7 @@ export default class LoginPage extends PureComponent {
                                                 onPress={() => {
                                                     this.setState({showPassword: !this.state.showPassword});
                                                 }}
-                                                style={{position: 'absolute', end: global.isRtl ? 5 : 0, top: -2}}
+                                                style={{}}
                                             >
                                                 <Image
                                                     source={this.state.showPassword ? images.ic_ShowPassword : images.ic_HidePassword}
@@ -573,11 +575,12 @@ export default class LoginPage extends PureComponent {
                                             </TouchableOpacity>
                                         }
                                     />
+
                                 </View>
                             </View>
 
                             {this.state.loading &&
-                            <LinearProgress style={{marginTop: 25, width: this.state.progressWidth - 10, maxWidth: 450}}
+                            <LinearProgress style={{marginTop: 25, width: this.state.progressWidth - 10, maxWidth: 400}}
                                             color="secondary"></LinearProgress>
                             }
                             <TouchableOpacity
@@ -633,6 +636,8 @@ export default class LoginPage extends PureComponent {
     }
 
     checkValidation() {
+        console.log(this.state.userName.length);
+        console.log(this.state.userPass.length);
         return this.state.userName.length === 11 && this.state.userPass.length >= 6;
     }
 
@@ -684,7 +689,8 @@ export default class LoginPage extends PureComponent {
                     globalState.responseMessage='خطا وضعیت اینترنت خود را برسی کنید.';
                 }
                 globalState.toastType='error';
-                globalState.showToastCard();
+                //globalState.showToastCard();
+                showMassage('عدم موفقیت','خطا','error')
                 this.setState({loading: false});
                 logger(this.state.userName + ' !!!!!!!! loginQuery catch', e.errMessage);
             })

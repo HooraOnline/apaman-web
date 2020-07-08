@@ -433,7 +433,7 @@ export default class FirstUserBalance extends PureComponent {
                             this.setState({showSearchType: false});
                         }}
                         onClose={() => this.setState({showSearchType: false})}
-                        fromTop={60}
+                        fromTop={55}
                     />
 
                     <SnakePopup
@@ -445,7 +445,7 @@ export default class FirstUserBalance extends PureComponent {
                             this.setState({showSortType: false});
                         }}
                         onClose={() => this.setState({showSortType: false})}
-                        fromTop={60}
+                        fromTop={55}
                     />
 
                     <View style={{

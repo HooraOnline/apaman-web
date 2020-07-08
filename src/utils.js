@@ -448,7 +448,7 @@ export function getTabWidth(width, number, margin = 48) {
     return (width - margin) / number;
 }
 
-export function showMassage(msg, title, type) {
+export function showMassage(msg, title='', type) {
     globalState.toastType = type;
     globalState.toastTitle = title;
     globalState.setResponseMessage(msg);

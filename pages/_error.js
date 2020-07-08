@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Router from "next/router";
 
-import {withTranslation} from '../i18n'
+//import {withTranslation} from '../i18n'
 
 class _error extends Component {
   componentDidMount = () => {
@@ -30,5 +30,6 @@ class _error extends Component {
     );
   }
 }
+export default _error
 
-export default withTranslation('translation')(_error)
+//export default withTranslation('translation')(_error)

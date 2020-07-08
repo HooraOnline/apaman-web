@@ -21,7 +21,7 @@ class Content extends PureComponent {
                 this.title = 'تبریک!';
                 this.message = 'عملیات با موفقیت انجام شد';
                 this.titleColor = '#00A28C';
-                this.messageColor = '#1CC4AD';
+                this.messageColor = '#4caf50';
                 this.image = images.bg_ntf_Success;
                 this.timeOut = 4000;
                 break;
@@ -29,7 +29,7 @@ class Content extends PureComponent {
                 this.title = 'مشکلی پیش آمده!';
                 this.message = 'خطایی رخ داده، لطفا دوباره سعی کنید';
                 this.titleColor = '#C73618';
-                this.messageColor = '#FF9D88';
+                this.messageColor = '#ff9800';
                 this.image = images.bg_ntf_Warning;
                 this.timeOut = 6000;
                 break;
@@ -37,7 +37,7 @@ class Content extends PureComponent {
                 this.title = 'خطایی رخ داد';
                 this.message = 'متاسفانه اینکار انجام نشد';
                 this.titleColor = '#B28600';
-                this.messageColor = '#FFC107';
+                this.messageColor = '#f44336';
                 this.image = images.bg_ntf_Error;
                 this.timeOut = 10000;
                 break;
@@ -45,7 +45,7 @@ class Content extends PureComponent {
                 this.title = '';
                 this.message = '';
                 this.titleColor = '#B28600';
-                this.messageColor = primary;
+                this.messageColor = '#2196f3';
                 this.image = images.bg_ntf_Error;
                 this.timeOut = 5000;
                 break;
@@ -116,36 +116,28 @@ class Content extends PureComponent {
             }}>
                 <Animated.View
                     style={{
-                        transform: [{translateY: animateTranslateY}],
-                        minHeight: 60,
-                        maxHeight: 60,
                         position: 'fixed',
-                        borderTopRightRadius: 20,
-                        borderTopLeftRadius: 20,
-                        bottom:'15%',
+                        bottom:80,
                         left: 0,
                         right: 0,
                         alignItems: 'center',
-
-
+                        zIndex:1000
                     }}
                 >
-
                     <View
-                        style={[styles.actionIcon, {
+                        style={[ {
                             flexDirection: 'row',
-                            alignItems: 'center',
                             borderWidth: 1,
                             borderColor: 'white',
-                            minHeight: 60,
                             backgroundColor: this.messageColor,
-                            justifyContent:'center',
+                            justifyContent:'space-between',
                             marginHorizontal: 30,
                             borderRadius: 10,
                             elevation: 4,
-                            position:'relative',
                             maxWidth:600,
+                            minWidth:200,
                             width:'95%',
+                            zIndex:1000,
                         }]}>
 
                        {/* <Image
@@ -153,29 +145,7 @@ class Content extends PureComponent {
                             style={{position: 'absolute', start: 0, top: 0, height: 59, width: 57}}
                         />*/}
 
-                        <TouchableWithoutFeedback
-                            onPress={() => this.animateSnake(false, onClose)}
-                        >
-                            <View
-                                style={{
-                                    position: 'absolute',
-                                    end: 10,
-                                    top:2,
-                                    paddingVertical: 15,
 
-                                }}
-                            >
-                                <IconApp
-                                    source={'apic_close'}
-                                    style={{
-                                        tintColor: bgWhite,
-                                        height: 24,
-                                        width: 24,
-                                    }}
-                                />
-                            </View>
-
-                        </TouchableWithoutFeedback>
 
                       {/*  <Text style={{
                             color: this.titleColor,
@@ -188,16 +158,31 @@ class Content extends PureComponent {
 
                         <Text style={{
                             color: bgWhite,
-                            fontSize: 12,
-                            paddingHorizontal:5,
+                            fontSize: 14,
+                            fontWeight:500,
+                            padding:15,
+
                         }}>{this.message}</Text>
+                        <TouchableWithoutFeedback
+                            onPress={() => this.animateSnake(false, onClose)}
+                            style={{
+                               padding:10,
+                                alignItems: 'center',
+                                justifyCenter:'center'
+                            }}
+                        >
+                            <IconApp
+                                source={'apic_close'}
+                                style={{
+                                    tintColor: bgWhite,
+                                    height: 24,
+                                    width: 24,
+                                }}
+                            />
+                        </TouchableWithoutFeedback>
                     </View>
-
-
                 </Animated.View>
-
             </View>
-
         );
     }
 }
@@ -210,7 +195,6 @@ export default class ToastCard extends PureComponent {
 
     render() {
         const {onClose, type, title, message} = this.props;
-
         return (
             <View>
                 {this.props.visible && (

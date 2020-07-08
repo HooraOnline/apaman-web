@@ -18,7 +18,7 @@ import Alert  from './Alert';
 import Modal  from './Modal';
 import Easing  from './Easing';
 import KeyboardAwareScrollView  from './KeyboardAwareScrollView';
-import I18nManager  from './I18nManager';
+//import I18nManager  from './I18nManager';
 import ImageBackground  from './ImageBackground';
 import Progress  from './Progress';
 import BgImageChacheProgress  from './BgImageChacheProgress';
@@ -45,7 +45,7 @@ export {
     Modal,
     KeyboardAwareScrollView,
     Easing,
-    I18nManager,
+    //I18nManager,
     ImageBackground,
     Progress,
     BgImageChacheProgress,

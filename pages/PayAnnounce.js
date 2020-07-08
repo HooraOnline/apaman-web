@@ -478,7 +478,7 @@ class PayAnnounce extends PureComponent {
             <View
                 style={{
                     flex: 1,
-                    marginTop:60,
+                    marginTop:50,
                     backgroundColor:
                         this.state.forPayment.length > 0 ? bgScreen : bgEmpty,
                 }}>
@@ -664,7 +664,7 @@ class PayAnnounce extends PureComponent {
                     visible={this.state.showCallList}
                     toolbarTitle="شماره های تماس"
                     items={this.state.calListSelected}
-                    fromTop={60}
+                    fromTop={50}
                     onItemSelected={item => {
                        // Communications.phonecall(item.TelNo, true);
                         this.setState({showCallList: false});
@@ -694,7 +694,7 @@ class PayAnnounce extends PureComponent {
                     containerStyle={{paddingBottom:18}}
                     toolbarTitle={"صورتحساب " + this.state.PaymentDetailTitle + (this.user?' '+this.user.Name:'')}
                     items={this.state.paymentDetailList}
-                    fromTop={60}
+                    fromTop={50}
                     itemSeparatorComponent = {() => (
                         <View
                             style={ {

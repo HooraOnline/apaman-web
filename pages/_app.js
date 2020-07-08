@@ -21,7 +21,7 @@ import App from "next/app";
 import Head from "next/head";
 import Router from "next/router";
 
-import { appWithTranslation } from '../i18n'
+//import { appWithTranslation } from '../i18n'
 import { fetchStore } from "../src/utils";
 
 //import PageChange from "components_creative/PageChange/PageChange.js";
@@ -36,6 +36,13 @@ import { loginQuery } from "../src/network/Queries";
 
 
 import Layout from "../src/components/Layout";
+
+
+import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
+import { create } from 'jss';
+import rtl from 'jss-rtl';
+import { StylesProvider, jssPreset } from '@material-ui/core/styles';
+
 
 
 Router.events.on("routeChangeStart", url => {
@@ -58,7 +65,7 @@ Router.events.on("routeChangeError", () => {
 });
 
 class MyApp extends App {
- static async getInitialProps({ Component, ctx }) {
+ static async getInitialProps22({ Component, ctx }) {
     let pageProps = {}
 
     if (Component.getInitialProps) {
@@ -68,7 +75,6 @@ class MyApp extends App {
     return { pageProps }
   }
   viewportHandler=(event)=> {
-    alert(22)
     // NOTE: This doesn't actually work at time of writing
     if (event.target.scale > 3) {
       document.body.classList.remove("hide-text");
@@ -134,11 +140,19 @@ class MyApp extends App {
   render() {
     const { Component, pageProps,router,  } = this.props;
     const title = 'اپامن'
+    const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
+
+    const theme = createMuiTheme({
+          direction: 'rtl',
+      });
     return (
         <>
-          <Layout>
-            <Component router={router} {...pageProps} {...this.state} />
-          </Layout>
+            <StylesProvider jss={jss}>
+                <Layout>
+                    <Component router={router} {...pageProps} {...this.state} />
+                </Layout>
+            </StylesProvider>
+
         </>
     )
 

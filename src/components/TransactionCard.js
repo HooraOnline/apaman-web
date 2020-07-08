@@ -125,7 +125,7 @@ export default function TransactionCard({item, onPress, isTransaction = false,st
                     padding: 16,
                     backgroundColor: bgItem,
                     elevation: 3,
-                    shadowColor: '#000',
+                    shadowColor: '#aaaaaa',
                     shadowOffset: {width: 0, height: 1},
                     shadowOpacity: 0.5,
                     borderRadius: 10,

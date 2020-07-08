@@ -40,7 +40,7 @@ export default function ShowDateTime({
                             borderRadius: 2,
                             backgroundColor: color,
                             marginHorizontal: 8,
-                            marginTop: 8,
+                            marginTop: 5,
                         }}
                     />
                 </View>

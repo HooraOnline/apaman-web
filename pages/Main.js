@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PureComponent} from 'react';
 import MainContent from "./home/MainContent";
 import {userStore, persistStore, globalState} from "../src/stores";
 import {permissionId} from '../src/constants/values';
@@ -19,22 +19,113 @@ import {
     borderSeparate,
     border,
     primary,
-    primaryDark,
+    primaryDark, bgEmpty,
 
 } from "../src/constants/colors";
 import accounting from "accounting";
-import {View ,TouchableOpacity,Text,} from "../src/react-native";
+import {View, TouchableOpacity, Text, FlatList, Image, Platform,} from "../src/react-native";
 import NavigationBottomMain from "../src/components/NavigationBottomMain";
-import Nearme from "./Nearme";
-import Notifications from "./Notifications";
+
 import {observer} from "mobx-react";
 import {fa} from "../src/language/fa";
+
+import Notifications from "./Notifications";
 
 const HOME_TYPE = 1;//'HOME';
 const PHONE_BOOK_TYPE = 'PHONE_BOOK';
 const NOTIFICATION_TYPE = 2;//'NOTIFICATION_TYPE';
 const NearMe_TYPE = 0;//'NearMe_TYPE';
 let deepLink = null;
+
+
+
+@observer
+class Nearme extends PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showOverlay: false,
+            showDeletePopUp: false,
+            showEditPopUp: false,
+            showAddNewLabelPopUp: false,
+            nominatedToDeleteItem: null,
+            nominateToEditItem: null,
+            loading: false,
+            loadingMessage: '',
+            permission: userStore.findPermission(permissionId.noticBoard),
+            idSwipeOpened: -1,
+            dataList: [],
+            isFabVisible: true,
+        };
+    }
+
+    componentDidMount() {
+
+    }
+
+    render() {
+
+        return (
+            <View style={{flex: 1, backgroundColor: '#F5F1F1'}}>
+                <FlatList
+                    ItemSeparatorComponent={() => (
+                        <View
+                            style={{
+                                height: 1,
+                                backgroundColor: '#D5CBCB',
+                            }}
+                        />
+                    )}
+                    keyExtractor={(item, index) => index.toString()}
+                    data={this.state.dataList}
+                    extraData={this.state.idSwipeOpened}
+                    onScroll={this.onScrollFab}
+                    ListEmptyComponent={
+                        <View
+                            style={{
+                                height: height - 150,
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                backgroundColor: this.state.dataList.length > 0 ? bgScreen : bgEmpty
+                            }}>
+                            <Image
+                                source={images.es_InProgress}
+                                style={{width: width, height: (width / 100) * 62}}
+                            />
+
+
+                            <Text
+                                style={{
+                                    fontFamily:
+                                        Platform.OS === 'ios'
+                                            ? 'IRANYekan-ExtraBold'
+                                            : 'IRANYekanExtraBold',
+                                    fontSize: 16,
+                                    textAlign: 'center',
+                                }}>
+                                فعلا در منطقه شما فعال نیست.
+                            </Text>
+                        </View>
+                    }
+                    renderItem={({item, index}) => (
+                        <View></View>
+                    )}
+                />
+
+
+
+
+
+            </View>
+        );
+    }
+
+
+
+
+}
+
+
 @observer
 export default class Main extends Component {
     constructor() {
@@ -242,7 +333,7 @@ export default class Main extends Component {
             footer={
                 <View
                     style={{
-                        height: 90,
+                        height: 85,
                         // width: width,
                         padding: 16,
                         backgroundColor:bgScreen

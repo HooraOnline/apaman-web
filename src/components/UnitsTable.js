@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import {Platform, Text, View,ScrollView,} from '../react-native';
+import {Text, View,ScrollView,} from '../react-native';
 import {black, gray, placeholderTextColor, primaryDark,} from '../constants/colors';
 import {FloatingLabelTextInput} from '../components';
 import accounting from 'accounting';
 import {userStore} from '../stores';
-import {mapNumbersToEnglish} from '../utils';
+import {mapNumbersToEnglish, Platform} from '../utils';
 import {CardUnitInfo} from './index';
 class UnitTableElement extends Component {
     render() {
@@ -50,12 +50,14 @@ class UnitTableElement extends Component {
                         </Text>
                     </View>
 
-                    <View style={{
+                    <View  style={{
                         flexDirection: 'row',
                         flex: 1,
                         alignItems: 'center',
                         width:'100%',
                         justifyContent: 'center',
+
+
                     }}>
                         {this.props.writePermission &&
                         <FloatingLabelTextInput
@@ -70,10 +72,10 @@ class UnitTableElement extends Component {
                                 fontSize: 14,
                                 fontFamily:'IRANYekanFaNum',
                                 color: black,
-                                textAlign: 'right',
+                                //textAlign:Platform()=='ios'? 'left':'right',
                             }}
                             underlineSize={1}
-                            placeholder={'مبلغ به ' + userStore.CurrencyID}
+                            placeholder={'مبلغ را وارد کنید.' }
                             style={{
                                 flex: 5,
                             }}
