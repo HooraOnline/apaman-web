@@ -183,7 +183,7 @@ export default class ImageSelector extends PureComponent {
                 <BgImageChacheProgress
                     style={style}
                     imageStyle={imageStyle}
-                    resizeMode="cover"
+                    resizemode="cover"
                     source={this.state.selectedImage?this.state.selectedImage: this.state.image ? {
                         imageName:this.state.image,
                         uri: getFileDownloadURL(this.state.image),

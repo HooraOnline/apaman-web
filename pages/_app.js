@@ -58,7 +58,7 @@ Router.events.on("routeChangeError", () => {
 });
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
+ static async getInitialProps({ Component, ctx }) {
     let pageProps = {}
 
     if (Component.getInitialProps) {
@@ -83,17 +83,13 @@ class MyApp extends App {
         viewportmeta = document.createElement("meta");
         viewportmeta.setAttribute("name","viewport");
         document.head.appendChild(viewportmeta);
-
         viewportmeta = document.querySelector('meta[name="viewport"]');
-
-        //window.visualViewport.addEventListener("resize", viewportHandler);
-
+       /* document.body.addEventListener('gesturestart', function () {
+          viewportmeta.content = 'width=device-width, minimum-scale=0.25, maximum-scale=1.0,user-scalable=no';
+        }, false);*/
       }
       viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no");
       console.log(document.querySelector('meta[name="viewport"]'));
-
-
-
     }
     await fetchStore();
     let comment = document.createComment(``);

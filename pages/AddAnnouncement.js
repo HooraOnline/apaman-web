@@ -656,7 +656,7 @@ export default class AddAnnouncement extends PureComponent {
                                         برای "{this.state.title}" موردی ثبت نشده است!{' '}
                                     </Text>
                                     <Image
-                                        // resizeMode='center'
+                                        // resizemode='center'
                                         source={images.es_calculator}
                                         style={{width:global.width, height: (global.width / 100) * 43}}
                                     />

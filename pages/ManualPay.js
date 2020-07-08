@@ -999,7 +999,7 @@ export default class ManualPay extends PureComponent {
                                         }}
 
                                         style={{height: height - 100, width: width - 100, borderRadius: 10}}
-                                        resizeMode="contain"
+                                        resizemode="contain"
                                     />
                                 </Animated.View>
                            {/* </PanGestureHandler>*/}

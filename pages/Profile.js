@@ -125,7 +125,7 @@ function UserImageSection({image, onPress, onImageLoad, imageExists}) {
                         width: imageExists ? 160 : 1,
                         borderRadius: 80,
                         overflow: `hidden`,
-                        resizeMode: 'cover',
+                        resizemode: 'cover',
                     }}
                     source={{
                         uri: image,
@@ -500,7 +500,7 @@ class ImageProfile extends PureComponent {
                     headers: {Authorization: 'Bearer ' + persistStore.token},
                     priority: FastImage.priority.high,
                 } : images.es_proflepicture}
-                resizeMode="cover"
+                resizemode="cover"
                 style={{
                     height: this.bannerHeight,
                     width: global.width,
@@ -1246,6 +1246,6 @@ const userImageSectionStyle = StyleSheet.create({
         height: 160,
         width: 160,
         borderRadius: 80,
-        resizeMode: 'cover',
+        resizemode: 'cover',
     },
 });

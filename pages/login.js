@@ -311,7 +311,7 @@ export default class LoginPage extends PureComponent {
                                     marginTop: 0,
                                     justifyContent: 'center',
                                     position: 'relative',
-                                    maxWidth:500,
+                                    maxWidth:450,
                                 }}>
                                 <Animated.View
                                     style={[styles.logoContainer, {
@@ -341,7 +341,7 @@ export default class LoginPage extends PureComponent {
                                         marginTop: 100,
                                     }}>
 
-                                    <LinearProgress style={{width: this.state.progressWidth, maxWidth: 500}}
+                                    <LinearProgress style={{width: this.state.progressWidth, maxWidth: 450}}
                                                     color="secondary"></LinearProgress>
 
                                     <Text
@@ -398,7 +398,7 @@ export default class LoginPage extends PureComponent {
                             backgroundColor: 'rgba(255,255,255,.8)',
                             marginTop: 0,
                             position: 'relative',
-                            maxWidth:500,
+                            maxWidth:450,
 
                         }}>
                         <Animated.View
@@ -577,7 +577,7 @@ export default class LoginPage extends PureComponent {
                             </View>
 
                             {this.state.loading &&
-                            <LinearProgress style={{marginTop: 25, width: this.state.progressWidth - 10, maxWidth: 500}}
+                            <LinearProgress style={{marginTop: 25, width: this.state.progressWidth - 10, maxWidth: 450}}
                                             color="secondary"></LinearProgress>
                             }
                             <TouchableOpacity
@@ -705,7 +705,7 @@ const styles = StyleSheet.create({
     background: {
         ...StyleSheet.absoluteFillObject,
         flex: 1,
-        resizeMode: 'stretch',
+        resizemode: 'stretch',
         justifyContent: 'center',
         // marginBottom: 16,
     },

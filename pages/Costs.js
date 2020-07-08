@@ -351,7 +351,7 @@ export default class Costs extends PureComponent {
                                     alignItems: 'center',
                                 }}>
                                 <Image
-                                    // resizeMode='center'
+                                    // resizemode='center'
                                     source={images.es_Inbox}
                                     style={{width: width, height: width / 100 * 62}}
                                 />

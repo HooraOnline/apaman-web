@@ -82,7 +82,7 @@ export default class CostCard extends PureComponent {
                                 height:Icon ? 32 : 24,
                                 // width:24,
                                 aspectRatio: 1,
-                                resizeMode: 'contain',
+                                resizemode: 'contain',
                             }}
                         />
                     </View>

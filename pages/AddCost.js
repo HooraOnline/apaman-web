@@ -1363,7 +1363,7 @@ export default class AddCost extends Component {
                                                                 height: 24,
                                                                  width:24,
                                                                 aspectRatio: 1,
-                                                                resizeMode: 'contain',
+                                                                resizemode: 'contain',
                                                             }}
                                                         />
                                                     )}
@@ -1399,7 +1399,7 @@ export default class AddCost extends Component {
                                                             height: 24,
                                                              width:24,
                                                             aspectRatio: 1,
-                                                            resizeMode: 'contain',
+                                                            resizemode: 'contain',
                                                         }}
                                                     />
                                                     <Text style={{paddingVertical: 16,marginHorizontal:10}}>

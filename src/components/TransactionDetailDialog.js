@@ -23,7 +23,7 @@ export default function TransactionDetailDialog({visible, item, onDismiss}) {
                     onPress={() => setState({showFullImage: false})}
                     close={() => setState({showFullImage: false})}>
                     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                        <ImageComponent image={item.Image} iHeight={global.height - 100} iWidth={global.width - 50} resizeMode="contain"/>
+                        <ImageComponent image={item.Image} iHeight={global.height - 100} iWidth={global.width - 50} resizemode="contain"/>
                     </View>
                 </Overlay>
             );

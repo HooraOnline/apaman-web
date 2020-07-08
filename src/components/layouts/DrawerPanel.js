@@ -181,7 +181,7 @@ class Header extends PureComponent {
                                 overflow: 'hidden',
 
                             }}
-                            resizeMode="contain"
+                            resizemode="contain"
                             src={this.state.profileImage }
 
                         />*/}
@@ -207,7 +207,7 @@ class Header extends PureComponent {
                                 color: '#ddd',
                                 unfilledColor: primaryDark,
                             }}
-                            resizeMode="contain"
+                            resizemode="contain"
                             onLoad={() => {
                                 this.setState({imageExists: true});
                             }}

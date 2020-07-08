@@ -23,7 +23,7 @@ export default class ImageComponent extends PureComponent {
         };
     }
     render() {
-        const {image, iHeight = 40, iWidth = 40, resizeMode = 'cover'} = this.props;
+        const {image, iHeight = 40, iWidth = 40, resizemode = 'cover'} = this.props;
         return (
                 <ImageCacheProgress
                     style={{
@@ -32,7 +32,7 @@ export default class ImageComponent extends PureComponent {
                         borderRadius: 10,
                         overflow: 'hidden',
                     }}
-                    resizeMode={resizeMode}
+                    resizemode={resizemode}
                     imageStyle={{
                         height:  56,
                         width: 56 ,
@@ -60,7 +60,7 @@ export default class ImageComponent extends PureComponent {
                     borderRadius: 10,
                     overflow: 'hidden',
                 }}
-                resizeMode={resizeMode}
+                resizemode={resizemode}
 
                 source={this.state.onError ? images.ic_error :
                     {
