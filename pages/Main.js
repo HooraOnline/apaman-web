@@ -385,7 +385,7 @@ export default class Main extends Component {
                    /* top={0}*/
                     visible={this.state.showAccountSelect}
                     onClose={()=>this.setState({showAccountSelect:false})}
-                    style={{marginTop:65,height:'93%',opacity:1}}
+                    style={{marginTop:50,height:'93%',opacity:1}}
                     contentStyle={{opacity:1, width:global.width,backgroundColor:bgWhite,paddingBottom:5, borderBottomRightRadius: 16,borderBottomLeftRadius:16,borderColor:bgWhite}}>
                     {accountsStore.accounts.map((item,index) => {
                             return (

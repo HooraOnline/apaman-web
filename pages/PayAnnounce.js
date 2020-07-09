@@ -898,6 +898,7 @@ class PayAnnounce extends PureComponent {
         debugger
         await setPaymentQuery(paymentInfo)
             .then(result => {
+                debugger
                 console.log(result);
                 if(result.length==0){
                     showMassage("پیام","لیست خالی است","error")
@@ -909,6 +910,7 @@ class PayAnnounce extends PureComponent {
                 Communications.web(result[0].payRequestResult.urlPay + result[0].payRequestResult.tokenPay);
             })
             .catch(e => {
+                debugger
                 globalState.showToastCard();
                 // Toast.show(e.errMessage, Toast.LONG);
                 console.warn('&&&&&&&&&&&&&&&&&&&& setPaymentQuery catch: ', e);

@@ -28,7 +28,7 @@ export default function TextInput(props) {
     const classes = useStyles();
     return(
         <View style={{flex:1,flexDirection:'row'}}>
-            {numberOfLines?(
+            {numberOfLines>1?(
                     <textarea {...props}  style={style} className={classes.main}
                            style={style}
                            ref={ref}

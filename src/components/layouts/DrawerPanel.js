@@ -35,7 +35,7 @@ const navigatorLinks = {
     FacilityDetails: 'FacilityDetails',
     Costs: 'Costs',
     Suggestion: 'Suggestion',
-    //NoticBoard: 'NoticBoard',
+    NoticBoard: 'NoticBoard',
     Units: 'Units',
     UnitsCreate: 'UnitsCreate',
     AddCost: 'AddCost',
@@ -99,7 +99,7 @@ const navigatorLinks = {
     ScheduleReserved: 'ScheduleReserved',
     UserScheduleReserved: 'UserScheduleReserved',
     MyReserves:'MyReserves',
-    DefineBuilding:'DefineBuilding',
+    MyBuilding:'MyBuilding',
     BuildingContact:'BuildingContact',
 
 };
@@ -555,8 +555,10 @@ const MenuBar=observer(props=> {
                         renderItem={(child, section, index) =>{
                             if(!child.destination)
                                 return null;
-                            if(!navigatorLinks[child.destination]){}
-                               showMassage(`The form  ${child.destination} is in Database forms but was not set in DrawerPanel.js file`,'','error')
+                            if(!navigatorLinks[child.destination]){
+                                showMassage(`The form  ${child.destination} is in Database forms but was not set in DrawerPanel.js file`,'','error')
+                            }
+
                             return (
                                 <MenuButton
                                     key={child.destination}

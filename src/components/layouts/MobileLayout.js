@@ -155,7 +155,7 @@ const MobileLayout = observer( props => {
                     width:'100%',
                     backgroundColor:bgScreen,
                     flexDirection:'column',
-                    margin:isWide?3:0,paddingTop:props.header?55:0,
+                    margin:isWide?3:0,paddingTop:props.header?51:0,
                     position:'relative',
             }}>
                <div id={"header"} style={{position:'fixed',top:0,zIndex:4,width:global.width}}>

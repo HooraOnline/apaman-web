@@ -1478,10 +1478,6 @@ export async function getImageBase64Query(fileName) {
 
 //**************
 
-
-
-
-
 export async function defineBuildingQuery(BuildingInformation) {
     try {
         return await fetchFactory(
@@ -1582,7 +1578,39 @@ export async function getContactType() {
         throw e;
     }
 }
+export async function getBuildingWithID(ID,CallerFormID,CallerRoleID,CallerUserID) {
+    try {
+        return await fetchFactory( `/building/${ID}.${CallerFormID}.${CallerRoleID}.${CallerUserID}`,
+            {
+                methods: 'GET'
+            } )
+    } catch (e) {
+        throw e
+    }
+}
 
-export async function getBuildingWithID() {
-
+export async function addContactsInformationQuery(contactsInformation) {
+    try {
+        return await fetchFactory(
+            '/building/addContact',
+            {
+                method: 'POST',
+                body:contactsInformation
+            },
+        );
+    } catch (e) {
+        throw e;
+    }
+}
+export async function getNewLobbyQuery() {
+    try {
+        return await fetchFactory(
+            `/apartment/lobby2/${userStore.BuildingID}.${persistStore.curentFormId}.${userStore.BuildingID}.${userStore.UnitID}.${userStore.RoleID}`,
+            {
+                method: 'GET',
+            },
+        );
+    } catch (e) {
+        throw e;
+    }
 }

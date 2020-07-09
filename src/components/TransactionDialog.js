@@ -3,7 +3,7 @@ import {Image, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View} fr
 
 import {
     bgScreen,
-    bgSuccess,
+    bgSuccess, bgWhite,
     lightRed,
     overlayColor,
     placeholderTextColor,
@@ -35,15 +35,15 @@ export default class TransactionDialog extends PureComponent {
 
         if (visible) {
             return (
-
                     <Overlay catchTouch={true} onPress={onDismiss} fill={null}>
-
                         <View
                             style={{
                                 backgroundColor: 'white',
                                 minHeight: 77,
+                                maxWidth:500,
                                 borderRadius: 20,
                                 marginHorizontal: 24,
+                                alignSelf:"center"
                             }}>
                             <View style={{flexDirection: 'row'}}>
                                 <TouchableOpacity
@@ -70,21 +70,27 @@ export default class TransactionDialog extends PureComponent {
                                     flexDirection: 'row',
                                     justifyContent: 'center',
                                     alignItems: 'center',
-                                    backgroundColor: overlayColor,
-                                    marginVertical: 24,
+                                    backgroundColor: bgWhite,
+                                    // marginVertical: 8,
                                 }}>
-                                <Image source={images.halfCircle} style={{height: 18, width: 10}}/>
+                                {/* <Image source={images.halfCircle} style={{height: 18, width: 10,tintColor:overlayColor}}/>*/}
+                                <View style={{width:18,height:18,backgroundColor:'rgb(102, 97, 96)',borderRadius:9,marginStart:-9}}/>
                                 <View style={{flex: 1, backgroundColor: 'white'}}>
                                     <View
-                                        style={{flex: 1, justifyContent: 'center', marginHorizontal: 14}}>
+                                        style={{
+                                            flex: 1,
+                                            justifyContent: 'center',
+                                            marginHorizontal: 7,
+                                        }}>
                                         <LineCustom color={subTextItem}/>
                                     </View>
                                 </View>
+                                <View style={{width:18,height:18,backgroundColor:'rgb(102, 97, 96)',borderRadius:9,marginEnd:-9}}/>
 
-                                <Image
-                                    source={images.halfCircle}
-                                    style={{transform: [{rotate: '180deg'}], height: 18, width: 10}}
-                                />
+                                {/* <Image
+                                                source={images.halfCircle}
+                                                style={{transform: [{rotate: '180deg'}], height: 18, width: 10,tintColor:borderLight}}
+                                            />*/}
                             </View>
 
                             <View
@@ -94,7 +100,7 @@ export default class TransactionDialog extends PureComponent {
                                     marginBottom: 24,
                                 }}>
                                 <Text style={[styles.costTitle]}>{item.Title}</Text>
-                                <Text style={{fontSize: 12, color: subTextItem, marginTop: 8}}>
+                                <Text style={{fontSize: 12, color: subTextItem, marginTop: 8,flexDirection:'row'}}>
                                     مبلغ قابل پرداخت
                                     <Text
                                         style={{
@@ -108,6 +114,7 @@ export default class TransactionDialog extends PureComponent {
                                 <View style={{
                                     flexDirection: 'row',
                                     marginHorizontal: 24,
+                                    marginTop:5,
                                 }}>
                                     <TextInput
                                         onChangeText={text => {
@@ -158,6 +165,7 @@ export default class TransactionDialog extends PureComponent {
                                                     ? 'IRANYekanFaNum-Bold'
                                                     : 'IRANYekanBold(FaNum)',
                                             paddingHorizontal: 16,
+                                            padding:10,
                                         }}>
                                         تایید و پرداخت
                                     </Text>
