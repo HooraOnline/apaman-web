@@ -882,7 +882,6 @@ font-size: 12px;
     }
 
     onDateSelect(date) {
-        debugger
         date=parseTimeToGregorian(date.year+'/'+date.month+'/'+date.day);
         date=mapNumbersToEnglish(date);
         this.props.onValueChange(date);

@@ -44,7 +44,6 @@ export default class ListMultiSelect extends PureComponent {
 
 
     onCheck(id,index) {
-        debugger
         if (this.state.selectedItems.includes(id)) {
             this.setState({ selectedItems: this.state.selectedItems.filter( item => item !== id, ), });
 
@@ -89,7 +88,6 @@ export default class ListMultiSelect extends PureComponent {
     }
 
     onAccept=()=> {
-        debugger
         let selectedIndex=[];
         let selectedEntity=[];
         this.state.selectedItems.map((id)=>{

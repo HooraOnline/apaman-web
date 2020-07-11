@@ -59,7 +59,6 @@ export default class AddMessage extends Component {
                 perPerson.push(obj.id);
             });
             let roles = persistStore.roles;
-             debugger
             this.setState({
                 title :item.Title,
                 message : item.Description,

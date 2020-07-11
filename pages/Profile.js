@@ -553,7 +553,6 @@ export default class Profile extends PureComponent {
 
             showTypePhoto: false,
         };
-        debugger
     }
 
 
