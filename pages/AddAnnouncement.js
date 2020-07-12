@@ -317,7 +317,7 @@ export default class AddAnnouncement extends PureComponent {
                         }
                     }}/>*/}
 
-                    <KeyboardAwareScrollView enableOnAndroid keyboardDismissMode='on-drag'>
+                    <KeyboardAwareScrollView style={{  marginBottom: 60,}} enableOnAndroid keyboardDismissMode='on-drag'>
                         <View
                             style={{
                                 marginHorizontal: 24,
@@ -526,7 +526,7 @@ export default class AddAnnouncement extends PureComponent {
                                 {(this.type.id === 1 || this.type.id === 2) && (
                                     <View
                                         style={{
-                                            flex: 1,
+                                            width: 170,
                                             marginEnd: this.type.id === 2 ? 16 : 0,
                                             justifyContent: 'center',
                                         }}>
@@ -548,11 +548,12 @@ export default class AddAnnouncement extends PureComponent {
                                 )}
                                 {(this.type.id === 2 || this.type.id === 3) && (
                                     <FloatingLabelTextInput
-                                        floatingLabelEnable={true}
+                                        floatingLabelEnable={false}
                                         editable={true}
                                         multiline={false}
                                         maxLength={70}
                                         keyboardType="numeric"
+                                        type={'number'}
                                         returnKeyType="done"
                                         numberOfLines={1}
                                         tintColor={placeholderTextColor}
@@ -563,7 +564,7 @@ export default class AddAnnouncement extends PureComponent {
                                                     ? 'IRANYekanFaNum-Bold'
                                                     : 'IRANYekanBold(FaNum)',
                                             color: textItem,
-                                            fontSize: 14,
+                                            fontSize: 12,
                                             paddingStart: 4,
                                             paddingTop: 1,
                                             paddingBottom: 3,
@@ -668,7 +669,7 @@ export default class AddAnnouncement extends PureComponent {
                             renderItem={({item,index}) => (
                                 <IOSSwipeCard
                                     //noPadding
-                                    style={{marginHorizontal:24}}
+                                    style={{marginHorizontal:24,}}
                                     index={index}
                                     onMore={() => this.showDetails(item)}
                                     moreIcon={images.ic_idCard}

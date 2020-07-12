@@ -147,12 +147,12 @@ export default class PersianCalendarPickerPopup extends PureComponent {
                                         borderRadius: 10,
                                         alignItems: 'center',
                                         width:width,
-                                        height:470
+
                                         //maxWith:maxWith,
                                     }}
                                 >
                                     {
-                                        <Text style={{alignSelf:'center',marginVertical:16}} >{this.props.title ||'انتخاب روز'}</Text>
+                                        <Text style={{alignSelf:'center',marginVertical:10}} >{this.props.title ||'انتخاب روز'}</Text>
                                     }
                                     <Calendar
                                         value={this.state.selectedDay}
@@ -162,7 +162,7 @@ export default class PersianCalendarPickerPopup extends PureComponent {
                                     />
                                     {showToday && (
                                         <TouchableOpacity
-                                            style={{alignSelf: 'flex-end', paddingHorizontal: 13, marginTop:10}}
+                                            style={{alignSelf: 'flex-end', paddingHorizontal: 30, marginVertical:10}}
                                             onPress={() => this.selectToday()}
                                         >
                                             <View style={{
@@ -275,7 +275,7 @@ font-size: 12px;
   --cl-color-black: #444444;
   --cl-color-disabled: #d4d4d4;
   --cl-color-error: #ff2929;
-  font-size: 10px;
+  font-size: 9px;
   background: #fff;
   box-shadow: 0 1em 4em rgba(0, 0, 0, 0.07);
   border-radius: 1em;
@@ -287,7 +287,7 @@ font-size: 12px;
   width: 33em;
   z-index: 10;
   max-width: 90vw;
-  min-height: 36.7em;
+  min-height: 20.7em;
 }
 
 .DatePicker .Calendar,
@@ -316,7 +316,7 @@ font-size: 12px;
 .Calendar__header {
   display: flex;
   color: var(--cl-color-black);
-  padding: 2em 2.9em;
+  padding: 1em 2.9em;
   align-items: center;
   overflow: hidden;
 }
@@ -661,7 +661,7 @@ font-size: 12px;
 
 .Calendar__sectionWrapper {
   position: relative;
-  min-height: 25.8em;
+  min-height: 22em;
   overflow: hidden;
 }
 

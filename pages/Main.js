@@ -325,7 +325,7 @@ export default class Main extends Component {
 
 
         return (
-            <MobileLayout title={`صفحه اصلی`}  onRef={(initDrawer)=>this.initDrawer=initDrawer}  style={{margin:0}}
+            <MobileLayout title={`صفحه اصلی`}  onRef={(initDrawer)=>this.initDrawer=initDrawer}  style={{margin:10}}
              header={<Toolbar
                  customStyle={toolbarStyle}
                  isExpand={this.state.showAccountSelect }

@@ -31,7 +31,7 @@ export default class A404 extends Component{
         };
         return (
             <MobileLayout
-                title={`درباره ما`}
+                title={`آدرس اشتباه`}
                 header={ <Toolbar  customStyle={toolbarStyle}/>}
 
                 style={{padding:'0',height:'fit-content'}}>

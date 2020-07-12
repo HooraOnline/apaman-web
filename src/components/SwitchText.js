@@ -67,7 +67,7 @@ export default class SwitchText extends PureComponent {
                                 }}>
                         </Animated.View>
                         <View
-                            style={[styles.item,{width:this.width/2,zIndex:2}]}>
+                            style={[styles.item,{width:this.width/2,zIndex:1}]}>
                             <Text
                                 style={[styles.text, {
                                     color: value ? 'white' : textDisabled,
@@ -77,7 +77,7 @@ export default class SwitchText extends PureComponent {
 
                         </View>
                         <View
-                            style={[styles.item,{width:this.width/2,zIndex:2}]}>
+                            style={[styles.item,{width:this.width/2,zIndex:1}]}>
                             <Text
                                 style={[styles.text, {
                                     color: value ? textDisabled : 'white',

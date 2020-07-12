@@ -19,6 +19,7 @@ import {accountsStore, globalState, persistStore, userStore} from '../src/stores
 import {loginQuery, roleQuery} from '../src/network/Queries';
 //import * as Progress from 'react-native-progress';
 import {
+    doDelay,
     fetchStore,
     getCookie,
     getWidth,
@@ -74,6 +75,7 @@ export default class LoginPage extends PureComponent {
             language: LNGList[0],
             languageIndex: LNGList[0].index,
             focusIndex:1,
+            boxWidth:320,
         };
         this.passInput =  React.createRef();
 
@@ -126,11 +128,16 @@ export default class LoginPage extends PureComponent {
 
     async componentDidMount() {
         this.applyRTLfromUserLanguage();
-        this.setState({
-            progressWidth: getWidth() - 50,
-            boxWidth: getWidth() > 500 ? 400 : getWidth() - 50,
-            bgImage: getWidth() > 600 ? images.bg_loginweb : images.bg_login
-        });
+       doDelay(100)
+           .then(()=>{
+               let width=getWidth() > 500 ? 400 : getWidth() - 24;
+               width=Math.min(width,340)
+               this.setState({
+                   boxWidth: width,
+                   bgImage: getWidth() > 600 ? images.bg_loginweb : images.bg_login
+               });
+
+           })
 
         await fetchStore();
 
@@ -275,99 +282,7 @@ export default class LoginPage extends PureComponent {
         }
     }
     render() {
-        console.log(global.isRtl)
-        if (!this.state.showLogin) {
-            return (
-                <BaseLayout title={'لاگین'} maxWidth={'100%'} style={{
-                    justifyContent: 'center',
-                    backgroundImage: "url(" + this.state.bgImage + ")",
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: '100% auto',
-                    backgroundPosition: 'center top',
-                    backgroundAttachment: 'fixed',
 
-                }}>
-                    <View style={{
-                        flex: 1,
-                        justifyContent: 'center',
-                        backgroundPosition: "top center",
-                    }}>
-                        <ScrollView
-                            // keyboardDismissMode='on-drag'
-                            showsVerticalScrollIndicator={false}
-                            scrollEnabled={this.state.showLogin}
-                            style={{
-                                flexGrow: 0,
-                                flex: 1,
-                                justifyContent: 'center',
-                                alignItems: 'center',
-
-                            }}>
-                            <Animated.View
-                                style={{
-                                    width: this.state.boxWidth,
-                                    borderRadius: 30,//this.animatedBorderRadius,
-                                    backgroundColor: 'rgba(255,255,255,.8)',
-                                    marginTop: 0,
-                                    justifyContent: 'center',
-                                    position: 'relative',
-                                    maxWidth:450,
-                                }}>
-                                <Animated.View
-                                    style={[styles.logoContainer, {
-                                        marginTop: 0,// this.animatedLogoPosition,
-                                        position: 'absolute',
-                                        top: -45,
-                                    }]}>
-                                    <Animated.Image source={images.logo} style={{
-                                        width: 90,//this.animatedLogoSize,
-                                        height: 90,// this.animatedLogoSize,
-                                    }}/>
-
-                                </Animated.View>
-                                <Text style={{
-                                    paddingTop: 100,
-                                    fontWeight: 1000,
-                                    fontSize: 25,
-                                    alignSelf: 'center',
-                                    fontFamily: 'IRANYekan-ExtraBold'
-                                }}>Apaman</Text>
-                                <View
-                                    style={{
-                                        // position: 'absolute',
-                                        //bottom:0,
-                                        flex: 1,
-                                        height: '100%',
-                                        marginTop: 100,
-                                    }}>
-
-                                    <LinearProgress style={{width: this.state.progressWidth, maxWidth: 400}}
-                                                    color="secondary"></LinearProgress>
-
-                                    <Text
-                                        style={{
-                                            marginTop: 16,
-                                            marginBottom: 16,
-                                            textAlign: 'center',
-                                            color: textItem,
-                                        }}
-                                    >{'نسخه ' + '2.52.40'}</Text>
-                                </View>
-                            </Animated.View>
-                        </ScrollView>
-
-                    </View>
-                    <style jsx global>{`
-                        .MuiLinearProgress-barColorSecondary {
-                           background-color: ${primaryDark} !important;
-                         }
-                         .MuiLinearProgress-colorSecondary {
-                                background-color: ${border} !important;
-                            }
-                    `}</style>
-                </BaseLayout>
-            )
-        }
         return (
 
             <BaseLayout title={'لاگین'} maxWidth={'100%'}
@@ -398,7 +313,7 @@ export default class LoginPage extends PureComponent {
                             backgroundColor: 'rgba(255,255,255,.8)',
                             marginTop: 0,
                             position: 'relative',
-                            maxWidth:450,
+                            maxWidth:400,
 
                         }}>
                         <Animated.View
@@ -406,6 +321,7 @@ export default class LoginPage extends PureComponent {
                                 marginTop: 0,// this.animatedLogoPosition,
                                 position: 'absolute',
                                 top: -35,
+                                left:this.state.boxWidth/2-35
                             }]}>
                             <Animated.Image source={images.logo} style={{
                                 width: 70,//this.animatedLogoSize,
@@ -415,202 +331,228 @@ export default class LoginPage extends PureComponent {
                         <Animated.View
                             style={{
                                 flex: 1,
-
                                 opacity: 1,// this.animatedLoginOpacity,
+
                             }}>
-                            <View style={{
-                                flex: 1,
-                                margin: 24,
-                            }}>
-                                <Select
-                                    style={{marginTop: 15, width: 100, alignSelf: 'center'}}
-                                    labelId="demo-simple-select-helper-label"
-                                    id="demo-simple-select-helper"
-                                    value={this.state.languageIndex}
-                                    onChange={(value, itemIndex) => {
+                            <View style={{flex:1, minHeight:280}}>
+                                {this.state.showLogin &&(
+                                    <View style={{
+                                        flex: 1,
+                                        margin: 24,
+                                    }}>
+                                        <Select
+                                            style={{marginTop: 15, width: 100, alignSelf: 'center'}}
+                                            labelId="demo-simple-select-helper-label"
+                                            id="demo-simple-select-helper"
+                                            value={this.state.languageIndex}
+                                            onChange={(value, itemIndex) => {
 
-                                        this.applyLanguage(LNGList[value.target.value], value.target.value);
-                                    }}
-                                >
-                                    {LNGList.map((lng, index) => <MenuItem value={index}>{lng.title}</MenuItem>)}
-                                </Select>
+                                                this.applyLanguage(LNGList[value.target.value], value.target.value);
+                                            }}
+                                        >
+                                            {LNGList.map((lng, index) => <MenuItem value={index}>{lng.title}</MenuItem>)}
+                                        </Select>
 
-                                <Text style={{
-                                    marginTop: 16,
-                                    fontSize: 16,
-                                    fontWeight:800,
-                                    fontFamily: Platform.OS === 'ios' ? 'IRANYekan-ExtraBold' : 'IRANYekanExtraBold',
-                                    textAlign: 'center',
-                                }}>
-                                    {translate('welcome_to_app')}
-                                </Text>
-                                <Text style={{
-                                    marginTop: 0,
-                                    marginBottom: 16,
-                                    fontSize: 14,
-                                    fontFamily: Platform.OS === 'ios' ? 'IRANYekanFaNum-Light' : 'IRANYekanLight(FaNum)',
-                                    textAlign: 'center',
-                                }}>
-                                    {
-                                        translate('enter_your_phone_number')
-                                    }
-                                </Text>
-
-                                <View dir={"ltr"}  style={{}}>
-                                    <FloatingLabelTextInput
-                                        floatingLabelEnable={false}
-                                        floatingOffsetX={0}
-                                        floatingLabelFont={{color: textItem}}
-                                        editable={true}
-                                        multiline={false}
-                                        maxLength={11}
-                                        //autoFocus={true}
-                                        keyboardType="number-pad"
-                                        type={'number'}
-                                        returnKeyType="next"
-                                        style={{}}
-                                        numberOfLines={1}
-                                        tintColor={
-                                            this.state.userNameValidation ? textItem : lightRed
-                                        }
-                                        textInputStyle={{
-                                            fontWeight: 'normal',
+                                        <Text style={{
+                                            marginTop: 16,
+                                            fontSize: 20,
+                                            fontWeight:800,
                                             fontFamily: Platform.OS === 'ios' ? 'IRANYekan-ExtraBold' : 'IRANYekanExtraBold',
-                                            color: textItemBlack,
+                                            textAlign: 'center',
+                                        }}>
+                                            {translate('welcome_to_app')}
+                                        </Text>
+                                        <Text style={{
+                                            marginTop: 10,
+                                            marginBottom: 16,
                                             fontSize: 14,
-                                            paddingStart: 4,
-                                            paddingTop: 10,
-                                            paddingBottom: 3,
-                                            textAlign: 'left',
+                                            fontFamily: Platform.OS === 'ios' ? 'IRANYekanFaNum-Light' : 'IRANYekanLight(FaNum)',
+                                            textAlign: 'center',
+                                        }}>
+                                            {
+                                                translate('enter_your_phone_number')
+                                            }
+                                        </Text>
 
-                                        }}
-                                        underlineSize={1}
-                                        placeholder={translate('example')}
-
-                                        // style={{flex: 1}}
-                                        onChangeText={text => {
-                                            this.checkValidation();
-                                            this.setState({
-                                                userName: inputNumberValidation(text, this.state.userName, /[\d]+$/),
-                                                userNameValidation: true,
-                                            }, () => {
-
-                                                if(this.state.userName.length === 11){
-                                                    this.passInput.current.focus();
-                                                }
-                                            });
-
-                                        }}
-                                        highlightColor={primaryDark}
-                                        value={this.state.userName}
-                                    />
-                                </View>
-
-                                <View
-                                    dir={'ltr'}
-                                    style={{
-                                        flexDirection: 'row',
-                                        marginTop: 24,
-                                    }}
-                                >
-
-                                    <FloatingLabelTextInput
-
-                                        refInput={input => loginInput[1] = input}
-                                        ref={this.passInput}
-                                        type={this.state.showPassword ? 'text' : 'password'}
-                                        floatingLabelEnable={false}
-                                        floatingOffsetX={0}
-                                        floatingLabelFont={{color: textItem}}
-                                        editable={true}
-                                        multiline={false}
-                                        maxLength={100}
-                                        autoFocus={this.state.focusIndex==2}
-                                        onKeyDown={(e)=>this.keyPress(e)}
-                                        keyboardType="default"
-                                        returnKeyType="done"
-                                        numberOfLines={1}
-                                        tintColor={
-                                            this.state.userPassValidation ? textItem : lightRed
-                                        }
-                                        textInputStyle={{
-                                            fontWeight: 'normal',
-                                            fontFamily: 'IRANYekan-ExtraBold',
-                                            color: textItemBlack,
-                                            fontSize: 14,
-                                            paddingStart: 4,
-                                            paddingTop: 1,
-                                            paddingBottom: 3,
-                                            textAlign: 'left',
-                                        }}
-                                        underlineSize={1}
-                                        placeholder={
-                                            translate('password')
-                                        }
-                                        style={{flex: 1,paddingLeft:2}}
-                                        onChangeText={text => {
-                                            this.checkValidation();
-                                            this.setState({
-                                                userPass: text,
-                                                userPassValidation: true,
-                                            });
-                                        }}
-                                        highlightColor={primaryDark}
-                                        value={this.state.userPass}
-                                        adornment={
-                                            <TouchableOpacity
-                                                onPress={() => {
-                                                    this.setState({showPassword: !this.state.showPassword});
-                                                }}
+                                        <View dir={"ltr"}  style={{}}>
+                                            <FloatingLabelTextInput
+                                                floatingLabelEnable={false}
+                                                floatingOffsetX={0}
+                                                floatingLabelFont={{color: textItem}}
+                                                editable={true}
+                                                multiline={false}
+                                                maxLength={11}
+                                                //autoFocus={true}
+                                                keyboardType="number-pad"
+                                                type={'number'}
+                                                returnKeyType="next"
                                                 style={{}}
-                                            >
-                                                <Image
-                                                    source={this.state.showPassword ? images.ic_ShowPassword : images.ic_HidePassword}
-                                                    style={{
-                                                        height: 24,
-                                                        width: 24,
-                                                        //tintColor: textItem
-                                                    }}
-                                                />
-                                            </TouchableOpacity>
-                                        }
-                                    />
+                                                numberOfLines={1}
+                                                tintColor={
+                                                    this.state.userNameValidation ? textItem : lightRed
+                                                }
+                                                textInputStyle={{
+                                                    fontWeight: 'normal',
+                                                    fontFamily: Platform.OS === 'ios' ? 'IRANYekan-ExtraBold' : 'IRANYekanExtraBold',
+                                                    color: textItemBlack,
+                                                    fontSize: 14,
+                                                    paddingStart: 4,
+                                                    paddingTop: 10,
+                                                    paddingBottom: 3,
+                                                    textAlign: 'left',
 
-                                </View>
+                                                }}
+                                                underlineSize={1}
+                                                placeholder={translate('example')}
+
+                                                // style={{flex: 1}}
+                                                onChangeText={text => {
+                                                    this.checkValidation();
+                                                    this.setState({
+                                                        userName: inputNumberValidation(text, this.state.userName, /[\d]+$/),
+                                                        userNameValidation: true,
+                                                    }, () => {
+
+                                                        if(this.state.userName.length === 11){
+                                                            this.passInput.current.focus();
+                                                        }
+                                                    });
+
+                                                }}
+                                                highlightColor={primaryDark}
+                                                value={this.state.userName}
+                                            />
+                                        </View>
+
+                                        <View
+                                            dir={'ltr'}
+                                            style={{
+                                                flexDirection: 'row',
+                                                marginTop: 24,
+                                            }}
+                                        >
+
+                                            <FloatingLabelTextInput
+
+                                                refInput={input => loginInput[1] = input}
+                                                ref={this.passInput}
+                                                type={this.state.showPassword ? 'text' : 'password'}
+                                                floatingLabelEnable={false}
+                                                floatingOffsetX={0}
+                                                floatingLabelFont={{color: textItem}}
+                                                editable={true}
+                                                multiline={false}
+                                                maxLength={100}
+                                                onKeyDown={(e)=>this.keyPress(e)}
+                                                keyboardType="default"
+                                                returnKeyType="done"
+                                                numberOfLines={1}
+                                                tintColor={
+                                                    this.state.userPassValidation ? textItem : lightRed
+                                                }
+                                                textInputStyle={{
+                                                    fontWeight: 'normal',
+                                                    fontFamily: 'IRANYekan-ExtraBold',
+                                                    color: textItemBlack,
+                                                    fontSize: 14,
+                                                    paddingStart: 4,
+                                                    paddingTop: 1,
+                                                    paddingBottom: 3,
+                                                    textAlign: 'left',
+                                                }}
+                                                underlineSize={1}
+                                                placeholder={
+                                                    translate('password')
+                                                }
+                                                style={{flex: 1,paddingLeft:2}}
+                                                onChangeText={text => {
+                                                    this.checkValidation();
+                                                    this.setState({
+                                                        userPass: text,
+                                                        userPassValidation: true,
+                                                    });
+                                                }}
+                                                highlightColor={primaryDark}
+                                                value={this.state.userPass}
+                                                adornment={
+                                                    <TouchableOpacity
+                                                        onPress={() => {
+                                                            this.setState({showPassword: !this.state.showPassword});
+                                                        }}
+                                                        style={{}}
+                                                    >
+                                                        <Image
+                                                            source={this.state.showPassword ? images.ic_ShowPassword : images.ic_HidePassword}
+                                                            style={{
+                                                                height: 24,
+                                                                width: 24,
+                                                                //tintColor: textItem
+                                                            }}
+                                                        />
+                                                    </TouchableOpacity>
+                                                }
+                                            />
+
+                                        </View>
+                                    </View>
+                                )
+
+                                }
                             </View>
 
-                            {this.state.loading &&
-                            <LinearProgress style={{marginTop: 25, width: this.state.progressWidth - 10, maxWidth: 400}}
-                                            color="secondary"></LinearProgress>
+
+
+                            {(this.state.loading || !this.state.showLogin) && (
+                                <View
+                                    style={{
+                                        // position: 'absolute',
+                                        //bottom:0,
+                                        flex: 1,
+                                        height: '100%'
+                                    }}>
+
+                                    <LinearProgress style={{width: '100%'}} color="secondary"/>
+                                    <Text
+                                        style={{
+                                            marginTop: 16,
+                                            marginBottom: 16,
+                                            textAlign: 'center',
+                                            color: textItem,
+                                        }}
+                                    >{'نسخه ' + '2.52.40'}</Text>
+                                </View>
+                            )
                             }
-                            <TouchableOpacity
-                                onPress={() => this.onLogin()}
-                                style={{
-                                    paddingVertical: 10,
-                                    alignItems: 'center',
-                                    borderWidth: 1,
-                                    borderColor: subTextItem,
-                                    borderRadius: 10,
-                                    marginHorizontal: 24,
-                                    marginTop: 10,
-                                    marginBottom: 16,
-                                    backgroundColor: this.checkValidation() ? primaryDark : 'transparent',
-                                }}
-                            >
-                                <Text style={{
-                                    fontSize: 16,
-                                    fontFamily: Platform.OS === 'ios' ? 'IRANYekan-ExtraBold' : 'IRANYekanExtraBold',
-                                    color: this.checkValidation() ? 'white' : subTextItem,
-                                }}
+
+                            {this.state.showLogin &&(
+                                <TouchableOpacity
+                                    onPress={() => this.onLogin()}
+                                    style={{
+                                        paddingVertical: 10,
+                                        alignItems: 'center',
+                                        borderWidth: 1,
+                                        borderColor: subTextItem,
+                                        borderRadius: 10,
+                                        marginHorizontal: 24,
+                                        marginTop: 10,
+                                        marginBottom: 16,
+                                        backgroundColor: this.checkValidation() ? primaryDark : 'transparent',
+                                    }}
                                 >
-                                    {
-                                        translate('login')
-                                    }
-                                </Text>
-                            </TouchableOpacity>
-
+                                    <Text style={{
+                                        fontSize: 16,
+                                        fontFamily: Platform.OS === 'ios' ? 'IRANYekan-ExtraBold' : 'IRANYekanExtraBold',
+                                        color: this.checkValidation() ? 'white' : subTextItem,
+                                    }}
+                                    >
+                                        {
+                                            translate('login')
+                                        }
+                                    </Text>
+                                </TouchableOpacity>
+                            )
+                            }
                         </Animated.View>
-
                     </Animated.View>
                 </ScrollView>
                 <LoadingPopUp visible={this.state.loading} login={true} message="در حال بررسی و ورود ..."/>
@@ -636,8 +578,7 @@ export default class LoginPage extends PureComponent {
     }
 
     checkValidation() {
-        console.log(this.state.userName.length);
-        console.log(this.state.userPass.length);
+
         return this.state.userName.length === 11 && this.state.userPass.length >= 6;
     }
 
@@ -685,12 +626,13 @@ export default class LoginPage extends PureComponent {
                     .finally(() => logger('******finily roleQuery******'));
             })
             .catch(e => {
+                debugger
                 if(e.message=='Failed to fetch'){
                     globalState.responseMessage='خطا وضعیت اینترنت خود را برسی کنید.';
                 }
                 globalState.toastType='error';
                 //globalState.showToastCard();
-                showMassage('عدم موفقیت','خطا','error')
+                showMassage('شماره تماس یا رمز عبور اشتباه می باشد','خطا','error')
                 this.setState({loading: false});
                 logger(this.state.userName + ' !!!!!!!! loginQuery catch', e.errMessage);
             })

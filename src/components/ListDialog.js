@@ -1,8 +1,9 @@
 import React, {PureComponent} from 'react';
-import {FlatList, Platform, StyleSheet, Text, TouchableOpacity, View} from '../react-native';
+import {FlatList, Modal, Platform, StyleSheet, Text, TouchableOpacity, View} from '../react-native';
 
 import {borderSeparate} from '../constants/colors';
 import {Overlay} from './index';
+import Dialog from "@material-ui/core/Dialog";
 
 
 export default class ListDialog extends PureComponent {
@@ -17,16 +18,24 @@ export default class ListDialog extends PureComponent {
             onDismiss,
         } = this.props;
 
-        if (visible) {
-            return (
-                <Overlay catchTouch onPress={onDismiss}>
+        return (
+            <Modal
+                visible={visible}
+                onClose={onDismiss}
+            >
+
                     <View
                         style={{
+                            flex: 1,
                             backgroundColor: 'white',
                             justifyContent: 'center',
                             marginHorizontal: 24,
+                            width:'95%',
                             paddingVertical: 16,
                             borderRadius: 10,
+                            marginTop:70,
+                            maxWidth:300,
+
                         }}>
 
                         <View
@@ -66,11 +75,9 @@ export default class ListDialog extends PureComponent {
                         />
 
                     </View>
-                </Overlay>
-            );
-        } else {
-            return <View/>;
-        }
+
+            </Modal>
+        );
     }
 
     select(item) {

@@ -9,6 +9,7 @@ import {isMobile} from "../utils";
 export default function SwipeOut({runScroll,children,style={},right,close,onOpen,onClose}) {
     const [deviceWidth, setDeviceWidth] = useState(width);
     const [width, setWidth] = useState(width);
+    const [height, setHeight] = useState(width);
     const containerRef = useRef(null);
     let cHeight,cWidth;
     if(containerRef.current){
@@ -41,17 +42,14 @@ export default function SwipeOut({runScroll,children,style={},right,close,onOpen
      
     `;
     let btnContainerWidth=right.length*60
-    const Actions  = <View style={{width:btnContainerWidth,height:'100%', flexDirection:'row',}}>
-        {
-            right.map((action)=><TouchableOpacity style={{width:160}} onPress={action.onPress}>{action.component}</TouchableOpacity> )
-        }
-    </View>;
 
     useEffect(() => {
         setDeviceWidth(global.width);
         if(containerRef.current){
             cWidth=containerRef.current.clientWidth;
+            cHeight=containerRef.current.clientHeight;
             setWidth(cWidth);
+            setHeight(cHeight);
         }
     },  []);
 
@@ -66,9 +64,9 @@ export default function SwipeOut({runScroll,children,style={},right,close,onOpen
                             </View>
 
                             {!close &&
-                                <View style={{width:btnContainerWidth,flexDirection:'row',}} >
-                                    {right.map((action)=><TouchableOpacity style={{width:60,}} onPress={action.onPress}>{action.component}</TouchableOpacity> )}
-                                </View>
+                            <View style={{width:btnContainerWidth,flexDirection:'row',}} >
+                                {right.map((action)=><TouchableOpacity style={{width:60,}} onPress={action.onPress}>{action.component}</TouchableOpacity> )}
+                            </View>
                             }
                         </View>
                     </View>
@@ -86,11 +84,13 @@ export default function SwipeOut({runScroll,children,style={},right,close,onOpen
                         {children}
                     </View>
                 </ChildrenHost>
-                    <ActionHost>
+                <ActionHost>
+                    <View style={{width:btnContainerWidth, flexDirection:'row',position:'relative' }}>
                         {
-                            Actions
+                            right.map((action)=><TouchableOpacity style={{width:160,height:height+16,position:'absolute',top:-32}} onPress={action.onPress}>{action.component}</TouchableOpacity> )
                         }
-                    </ActionHost>
+                    </View>
+                </ActionHost>
             </Container>
         </View>
     );

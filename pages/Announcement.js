@@ -16,7 +16,7 @@ import {AlertMessage, AndroidBackButton, Fab, IOSSwipeCard, ListDialog, LoadingP
 import images from "../public/static/assets/images";
 import {
     bgScreen,
-    bgSuccess,
+    bgSuccess, bgWhite,
     drawerItem,
     progressDefault,
     textItem, transparent,
@@ -296,15 +296,17 @@ export default class Announcement extends PureComponent {
 
                     <FlatList
                         ListEmptyComponent={
-                            <View
+                            <div
                                 style={{
+                                    width:'100%',
                                     height: global.height - 90,
                                     justifyContent: 'center',
                                     alignItems: 'center',
+
                                 }}>
                                 <Image
                                     source={images.es_Inbox}
-                                    style={{width:global.width, height: (global.width / 100) * 62}}
+                                    style={{width:global.width-20,maxWidth:global.width-20, height: (global.width / 100) * 62}}
                                 />
                                 <Text
                                     style={{
@@ -327,13 +329,13 @@ export default class Announcement extends PureComponent {
                                     دکمه زیر را فشار دهید.
                                 </Text>
 
-                                <View style={{marginTop: 24}}>
+                                <View style={{marginTop: 24,alignItems:'center'}}>
                                     <Fab
                                         onPress={() => this.setState({showAddType: true})}
                                         icon={images.ic_add}
                                     />
                                 </View>
-                            </View>
+                            </div>
                         }
                         keyExtractor={(item, index) => index.toString()}
                         extraData={this.state.allAnnouncements}
@@ -343,9 +345,9 @@ export default class Announcement extends PureComponent {
                             <IOSSwipeCard
                                 noPadding
                                 style={{
-                                    marginHorizontal: 16,
-                                    marginTop: 16,
-                                    marginBottom: 3,
+                                    //marginHorizontal: 5,
+                                    //marginTop: 16,
+                                    //marginBottom: 3,
                                     borderRadius: 10,
                                 }}
                                 index={index}
@@ -355,13 +357,13 @@ export default class Announcement extends PureComponent {
                                 deleteBtnCorner={true}
                                 idSwipeOpened={this.state.idSwipeOpened}>
                                     <AnnouncementItem
-                                        onPress={item =>
-                                            navigation.navigate('AnnouncementEdit', {
-                                                announcement: item,
-                                                type: addTypes[0],
-                                            })
-                                        }
                                         item={item}
+                                        onPress={item =>{
+                                            navigation.navigate('AnnouncementEdit', {  announcement: item, type: addTypes[0], })
+                                        }
+
+                                        }
+
                                         // itemDetail={(itemSelected) => this.itemDetail(itemSelected)}
                                     />
                             </IOSSwipeCard>
@@ -414,8 +416,9 @@ export default class Announcement extends PureComponent {
     }
 
     addAnnouncement = type => {
-        this.setState({showAddType: false});
+
        navigation.navigate('AddAnnouncement', {type});
+        this.setState({showAddType: false});
     };
 
     onScrollFab = event => {
@@ -443,4 +446,5 @@ const addTypes = [
     {id: 1, Name: 'ثابت', title: 'اعلان هزینه ثابت'},
     {id: 2, Name: 'متغیر', title: 'اعلان هزینه متغیر'},
     {id: 3, Name: 'درآمد', title: 'اعلان درآمد'},
+    {id: 4, Name: 'صندوق', title: 'صندوق'},
 ];

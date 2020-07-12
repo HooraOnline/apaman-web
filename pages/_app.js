@@ -55,17 +55,19 @@ Router.events.on("routeChangeStart", url => {
   }*/
 
 });
+
 Router.events.on("routeChangeComplete", () => {
   ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"));
   document.body.classList.remove("body-page-transition");
 });
+
 Router.events.on("routeChangeError", () => {
   ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"));
   document.body.classList.remove("body-page-transition");
 });
 
 class MyApp extends App {
- static async getInitialProps22({ Component, ctx }) {
+ /*static async getInitialProps({ Component, ctx }) {
     let pageProps = {}
 
     if (Component.getInitialProps) {
@@ -73,7 +75,8 @@ class MyApp extends App {
     }
 
     return { pageProps }
-  }
+  }*/
+
   viewportHandler=(event)=> {
     // NOTE: This doesn't actually work at time of writing
     if (event.target.scale > 3) {
@@ -82,6 +85,7 @@ class MyApp extends App {
       document.body.classList.add("hide-text");
     }
   }
+
   async componentDidMount() {
     if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
       let viewportmeta = document.querySelector('meta[name="viewport"]');
@@ -101,8 +105,8 @@ class MyApp extends App {
     let comment = document.createComment(``);
     document.insertBefore(comment, document.documentElement);
     this.loadUserData();
-
   }
+
 /*  async getInitialProps({ Component, router, ctx }) {
     let pageProps = {};
     console.warn("@@@@@@@@@@ App nextJs INIT");
@@ -132,8 +136,6 @@ class MyApp extends App {
         console.log('catch Token : ', error);
       }
     }
-
-
   }
 
 
@@ -144,7 +146,7 @@ class MyApp extends App {
 
     const theme = createMuiTheme({
           direction: 'rtl',
-      });
+    });
     return (
         <>
             <StylesProvider jss={jss}>
@@ -152,11 +154,8 @@ class MyApp extends App {
                     <Component router={router} {...pageProps} {...this.state} />
                 </Layout>
             </StylesProvider>
-
         </>
     )
-
-
     //return <Component {...pageProps} {...this.state} />
   }
 }

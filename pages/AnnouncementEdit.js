@@ -124,6 +124,7 @@ export default class AnnouncementEdit extends PureComponent {
                                 flexDirection: 'column',
                                 alignItems: 'center',
                                 marginTop: 24,
+
                             }}>
                             <Text
                                 style={{
@@ -275,7 +276,7 @@ export default class AnnouncementEdit extends PureComponent {
                             renderItem={({item,index}) => (
                                 <IOSSwipeCard
                                     //noPadding
-                                    style={{marginHorizontal:24}}
+                                    style={{marginHorizontal:24,}}
                                     index={index}
                                     onMore={() => this.showDetails(item)}
                                     moreIcon={images.ic_idCard}
@@ -292,7 +293,7 @@ export default class AnnouncementEdit extends PureComponent {
                                         <CardUnitInfo
                                             unitNumber={item.UnitNumber}
                                             floorNumber={item.FloorNumber}
-                                            style={{marginHorizontal:-44,}}
+                                            style={{marginHorizontal:0,}}
                                             area={item.Area}>
 
                                             <View

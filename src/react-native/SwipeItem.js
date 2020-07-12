@@ -1,4 +1,6 @@
-class SwipeItem extends React.Component {
+import React from "react";
+
+export default  class SwipeItem extends React.Component {
     constructor(props) {
         super(props);
 
@@ -136,59 +138,42 @@ class SwipeItem extends React.Component {
                 >
                     {this.props.children}
                 </div>
+                <style jsx global>{`
+                    .swipeItem {
+                        position: relative;
+                        overflow: hidden;
+                        width: 350px;
+                        outline: 1px solid black;
+                    }
+                    
+                    .swipeItem-content {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    
+                    .swipeList {
+                        list-style-type: none;
+                    }
+                    
+                    .swipeList-addButton {
+                        font-size: 30px;
+                        text-align: center;
+                        width: 350px;
+                        height: 65px;
+                        padding: auto;
+                        background-color: white;
+                        border: none;
+                        outline: 1px solid black;
+                    }
+                      `}
+                </style>
             </li>
         );
     }
 }
 
-class SwipeList extends React.Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            counter: 1,
-            items: {
-                [0]: 'http://lorempixel.com/350/65/'
-            }
-        };
-    }
-
-    addImage() {
-        this.setState({
-            counter: this.state.counter + 1,
-            items: {...this.state.items, [this.state.counter]: 'http://lorempixel.com/350/65/'}
-        });
-    }
-
-    removeItem(keyOfItemToRemove) {
-        let nextItems = {};
-        Object.keys(this.state.items).forEach(itemKey => {
-            if (itemKey !== keyOfItemToRemove) {
-                nextItems[itemKey] = this.state.items[itemKey];
-            }
-        });
-
-        this.setState({items: nextItems});
-    }
-
-    render() {
-        return (
-            <ul className="swipeList">
-                {Object.keys(this.state.items).map(itemKey =>
-                    <SwipeItem key={`swipeItem-${itemKey}`} onRemoval={() => this.removeItem(itemKey)}>
-                        <img src={this.state.items[itemKey]} />
-                    </SwipeItem>
-                )}
-                <button
-                    className="swipeList-addButton"
-                    onClick={() => this.addImage()}
-                >
-                    Add image...
-                </button>
-            </ul>
-        );
-    }
-}
 
 
 

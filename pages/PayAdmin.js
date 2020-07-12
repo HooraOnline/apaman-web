@@ -409,7 +409,8 @@ export default class PayAdmin extends PureComponent {
     }
 
     onBackPress() {
-        Router.back();
+        navigation.replace('Main');
+
     }
 
     callHandler(item) {

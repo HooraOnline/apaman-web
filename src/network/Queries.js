@@ -1,6 +1,7 @@
 import {fetchFactory, getFileDownloadURL, logger,unicodeToChar} from '../utils';
 import {accountsStore, globalState, persistStore, userStore} from '../stores';
 import fetch from "isomorphic-unfetch";
+import version from "../version";
 
 
 
@@ -15,18 +16,16 @@ export async function loginQuery(username, password) {
             body: {
                 username: username,
                 password: password,
-                DeviceID: 'user ip',
+                DeviceID:'111111111111111111',
                 HasAuthenticated: persistStore.token ? 1 : 0,
             },
         }).then(response => {
-
             console.info('***** loginQuery response: ', response);
             accountsStore.accounts = response.data;
             persistStore.token = response.token;
             persistStore.username = username;
         });
     } catch (e) {
-        console.log(e);
         throw e;
     }
 }

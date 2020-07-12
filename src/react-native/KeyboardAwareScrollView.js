@@ -1,6 +1,7 @@
 
 import View from "./View";
 import {makeStyles} from "@material-ui/core/styles";
+import {ScrollView} from "./index";
 
 export default function KeyboardAvoidingView(props) {
     let {style={},onPress,disabled} = props;
@@ -12,7 +13,7 @@ export default function KeyboardAvoidingView(props) {
     const useStyles = makeStyles(styles);
     const classes = useStyles();
     return (
-        <View {...props} style={style} className={classes.main}/>
+        <ScrollView {...props} style={style} className={classes.main}/>
     );
 }
 

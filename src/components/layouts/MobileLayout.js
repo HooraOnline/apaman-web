@@ -20,6 +20,7 @@ import {TouchableOpacity} from "../../react-native";
 import {View} from "../../react-native";
 import Typography from "@material-ui/core/Typography";
 import images from "../../../public/static/assets/images";
+import LoadingPopUp from "../LoadingPopUp";
 
 
 const  maxWidth=700;
@@ -155,7 +156,7 @@ const MobileLayout = observer( props => {
                     width:'100%',
                     backgroundColor:bgScreen,
                     flexDirection:'column',
-                    margin:isWide?3:0,paddingTop:props.header?51:0,
+                    margin:isWide?3:0,paddingTop:props.header?55:0,
                     position:'relative',
             }}>
                <div id={"header"} style={{position:'fixed',top:0,zIndex:4,width:global.width}}>
@@ -178,6 +179,10 @@ const MobileLayout = observer( props => {
                     title={globalState.toastTitle}
                     message={globalState.responseMessage}
                     onClose={() => globalState.hideToastCard()}
+                />
+                <LoadingPopUp
+                    visible={props.loading}
+                    message={props.loadingMessage || ''}
                 />
            </div>
         </div>

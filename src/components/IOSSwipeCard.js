@@ -154,6 +154,7 @@ const styles = StyleSheet.create({
     container: {
         //overflow:  'hidden',
         backgroundColor: '#f5f1f1',
+        marginTop:16,
     },
     title: {
         // paddingVertical: 8,

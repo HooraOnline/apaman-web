@@ -30,7 +30,6 @@ export default function TextInput(props) {
         <View style={{flex:1,flexDirection:'row'}}>
             {numberOfLines>1?(
                     <textarea {...props}  style={style} className={classes.main}
-                           style={style}
                            ref={ref}
                            inputProps={{
                                maxLength: maxLength,
@@ -56,7 +55,7 @@ export default function TextInput(props) {
                 )
                 :(
                     <input {...props}  style={style} className={classes.main}
-                           style={style}
+
                            ref={ref}
                            inputProps={{
                                maxLength: maxLength,

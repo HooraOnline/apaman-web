@@ -40,10 +40,11 @@ export default class TransactionDialog extends PureComponent {
                             style={{
                                 backgroundColor: 'white',
                                 minHeight: 77,
+                                minWidth:300,
                                 maxWidth:500,
                                 borderRadius: 20,
                                 marginHorizontal: 24,
-                                alignSelf:"center"
+                                alignSelf:"center",
                             }}>
                             <View style={{flexDirection: 'row'}}>
                                 <TouchableOpacity
@@ -115,6 +116,7 @@ export default class TransactionDialog extends PureComponent {
                                     flexDirection: 'row',
                                     marginHorizontal: 24,
                                     marginTop:5,
+                                    alignItems: 'center',
                                 }}>
                                     <TextInput
                                         onChangeText={text => {
@@ -131,12 +133,13 @@ export default class TransactionDialog extends PureComponent {
                                             flex: .7,
                                             fontWeight: 'normal',
                                             fontFamily: Platform.OS === 'ios' ? 'IRANYekanFaNum-Bold' : 'IRANYekanBold(FaNum)',
-                                            fontSize: 32,
+                                            fontSize: 20,
                                             color: primaryDark,
                                             paddingStart: 4,
                                             paddingTop: 1,
                                             paddingBottom: 3,
                                             textAlign: 'center',
+                                            alignSelf:'center'
                                         }}
                                         multiline={false}
                                         maxLength={17}

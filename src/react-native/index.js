@@ -18,6 +18,7 @@ import Alert  from './Alert';
 import Modal  from './Modal';
 import Easing  from './Easing';
 import KeyboardAwareScrollView  from './KeyboardAwareScrollView';
+import SwipeItem  from './SwipeItem';
 //import I18nManager  from './I18nManager';
 import ImageBackground  from './ImageBackground';
 import Progress  from './Progress';
@@ -50,6 +51,7 @@ export {
     Progress,
     BgImageChacheProgress,
     SectionList,
-    IconApp
+    IconApp,
+    SwipeItem,
 
 }

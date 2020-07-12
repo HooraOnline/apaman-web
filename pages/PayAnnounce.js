@@ -320,7 +320,7 @@ class PayAnnounce extends PureComponent {
         };
 
         return (
-            <MobileLayout child={this} style={{padding:0}} title={ this.pageTitle}
+            <MobileLayout child={this} style={{padding:0}} loading={this.state.loading} title={ this.pageTitle}
               header={
                   <View>
                       <Toolbar customStyle={toolbarStyle}/>
@@ -895,10 +895,9 @@ class PayAnnounce extends PureComponent {
             CallerBuildingID: userStore.BuildingID,
             CallerUnitID: userStore.UnitID,
         };
-        debugger
         await setPaymentQuery(paymentInfo)
             .then(result => {
-                debugger
+
                 console.log(result);
                 if(result.length==0){
                     showMassage("پیام","لیست خالی است","error")
@@ -907,7 +906,9 @@ class PayAnnounce extends PureComponent {
                 console.warn('&&&&&&&&&&&&&&&&&&&& setPaymentQuery result: ', result);
                 persistStore.paymentId = result[0].PaymentID;
                 global.WebBackScreenName='PayAnnounce';
-                Communications.web(result[0].payRequestResult.urlPay + result[0].payRequestResult.tokenPay);
+                let shaparakUrl=result[0].payRequestResult.urlPay + result[0].payRequestResult.tokenPay;
+                window.location=shaparakUrl;
+
             })
             .catch(e => {
                 debugger
