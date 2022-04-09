@@ -61,7 +61,7 @@
     "mobx-persist": "^0.4.1",
     "mobx-react": "^6.1.4",
     "mobx-react-devtools": "^6.1.1",
-    "moment": "2.24.0",
+    "moment": "2.29.2",
     "moment-jalaali": "^0.9.1",
     "next": "^9.4.4",
     "next-compose-plugins": "2.2.0",
